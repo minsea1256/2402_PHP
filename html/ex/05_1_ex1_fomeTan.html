@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fome 태그</title>
+</head>
+<body>
+    <!-- 
+        fome 태그 : 정보를 제출하기 위한 태그
+
+     -->
+     <form action="">
+        <!-- input 태그 : 다양한 방법으로 데이터를 받기위한 태그 -->
+        <!-- 
+            *** 속성 ***
+            required : 텍스트를 입력하고 넘어갈수 있게 한다
+            placeholder : 유저에게 알림글 안내할수 있게 한다[input 칸 안에 내용작성]
+            readonly : 읽기 정보만 가능 수정할 수 없다
+            value : input 내용을 value에 모두 저장한다.
+            minlength : input type="text" 에서 최소 값
+            maxlength : input type="text" 에서 최대 값
+         -->
+
+         <!-- type="text" : 택스트를 입력할수 있는 값 -->
+         <label for="input-id">ID</label>
+         <input type="text" id="input-id" required placeholder="ID를 입력하세요.">
+         <br>
+         <!-- type="password" : 패스워드를 입력할수 있는 값 -->
+         <label for="input-password">PW</label>
+         <input type="password" id="input-password" required placeholder="PW를 입력하세요.">
+         <br>
+         <!-- type="email" : 이메일을 입력하고 형식 체크 -->
+        <label for="input-email">Email</label>
+        <input type="email" id="input-email" readonly value="이메일이다.">
+         <br><br>
+         <!--  type="checkbox" : name을 통일 시켜줘야 한다  -->
+        <input type="checkbox" name="food" id="chk-1">
+        <label for="chk-1">돈까스</label>
+        <input type="checkbox" name="food" id="chk-2">
+        <label for="chk-2">짜장면</label>
+        <input type="checkbox" name="food" id="chk-3">
+        <label for="chk-3">분식</label>
+         <br><br>
+         <!--  type="radio" : name을 통일 시켜줘야 정상작동  -->
+        <input type="radio" name="fruit" id="radio-1">
+        <label for="radio-1">사과</label>
+        <input type="radio" name="fruit" id="radio-2">
+        <label for="radio-2">청포도</label>
+        <input type="radio" name="fruit" id="radio-3">
+        <label for="radio-3">바나나</label>
+        <br>
+        <!-- type="date" : 달력 -->
+         <input type="date">
+         <br>
+         <!-- type="range" : 조절 바 -->
+         <input type="range" min="0" max="10">
+         <br>
+         <!-- type="number" : 숫자 입력 -->
+         <input type="number" min="0" max="10">
+         <!-- 
+            min : 최소
+            max : 최대
+         -->
+
+        <!-- input button은 요즘 잘 안쓴다. -->
+         <!-- <input type="button" value="인풋 버튼">
+        <br>
+         <input type="submit" value="인풋 서브밋">
+        <br>
+         <input type="reset" value="인풋 reset"> -->
+        <br>
+        <textarea cols="30" rows="20"></textarea>
+        <br>
+        <select name="poketmon" id="poketmon">
+            <option value="0">피카츄</option>
+            <option value="1">라이츄</option>
+            <option value="2">파이리</option>
+            <option value="3">꼬부기</option>
+        </select>
+        
+        <br>
+        <!-- fieldset : 네모칸에 정보를 넣어 정리 가능하다 -->
+        <fieldset>
+            <legend><Strong>정보입력</Strong></legend>
+            <label for="id">ID</label>
+            <input type="text">
+        </fieldset>
+
+        <br>
+        <!-- button type="reset" fomr에 있는 파일 한에서 유저가 선택한 리스트를 리셋 시키는 버튼 -->
+         <button type="reset">reste</button>
+         <!-- button type="submit" : fomr에 있는 파일 한에서 유저가 선택한 리스트 정보를 보내는 버튼 -->
+         <button type="submit">submit</button>
+         <button type="button">button</button>
+     </form>
+</body>
+</html>
