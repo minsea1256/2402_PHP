@@ -1,0 +1,66 @@
+.color-name {
+    color: rosybrown;
+}
+.color-hex {
+    color: #ff0000;
+}
+.color-rgb {
+    color: rgb(055, 000, 000);
+}
+.color-rgba {
+    /* 투명도 조절할때 사용한다 투명도 값은(0~1)까지 적용 */
+    color: rgba(255, 0, 255, 0.2);
+}
+.color-hsla {
+    /* color: hsla(색상, 명도, 채도); */
+    color: hsla(355, 100%, 100%);
+}
+
+#p-center {
+    text-align: center;
+}
+#p-right {
+    text-align: right;
+}
+#p-left {
+    text-align: left;
+}
+
+.div-center {
+    width: 200px;
+    height: 200px;
+    background-color: antiquewhite;
+}
+.div-center p {
+    text-align: center;
+    line-height: 200px; /* 줄간격 조절을 통해 중앙으로 정렬 , 위아래로 더해서 값을 정한다 */
+}
+
+/* 영어 첫번째 글자를 대문자로 변환 */
+.capitalize {
+    text-transform: capitalize;
+}
+/* 텍스트를 영어 대문자로 변환 */
+.upperxase {
+    text-transform: uppercase;
+}
+/* 텍스트를 영어 소문자로 변환 */
+.lowercase {
+    text-transform: lowercase;
+}
+
+/* 자간 설정 */
+.letter-spacing {
+    letter-spacing: 2rem;
+}
+
+/* 단어간격 설정 */
+.word-spacing {
+    word-spacing: 2rem;
+}
+
+/* 택스트 그림자 설정 */
+.text-shadow {
+    /* text-shadow: 가로위치, 세로위치, 그림자굵기, 색상; */
+    text-shadow: 5px 2px 5px #5c5c5c;
+}

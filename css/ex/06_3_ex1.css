@@ -1,0 +1,34 @@
+/* 전체 선택자 */
+* {
+    color: skyblue;
+}
+
+/* 타입 선택자 */
+h1 {
+    color: red;
+}
+
+p {
+    color: green;
+}
+
+/* 클래스 선택자 */
+.color-orange {
+    color: orangered;
+}
+.font-size-3rem {
+    font-size: 3rem;
+}
+.color-black {
+    color: black;
+}
+
+/* id 선택자 */
+#p-2 {
+    color: aqua;
+}
+
+/* 그룹 선택자 */
+h1, p, #p-2 {
+    color: blueviolet;
+}

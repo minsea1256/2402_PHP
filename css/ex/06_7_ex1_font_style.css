@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Hi+Melody&display=swap');
+* {
+    /* 폰트 스타일 */
+    font-family: "Hi Melody", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+h1 {
+    /* 글자 크기 변경 */
+    /* font-size: medium; 키워드로 조절 */
+    /* px으로 조절 [픽셀단위로 조절] */
+    /* font-size: 10px; */
+
+    /* em으로 조절 [부모요소 기준 배율] */
+    /* font-size: 2em; */
+
+    /* rem으로 조절 [최상위 요소 기준 배율] */
+    /* font-size: 2rem; */
+}
+p {
+    /* 폰트 굵기 */
+    /* 키워드로 조절 */
+    /* font-weight: bold; */
+
+    /* 숫자를 통해서 조절(100~900, 폰트 크기는 100단위로 설정된다) */
+    font-weight: 400;
+}
+

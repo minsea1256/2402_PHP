@@ -1,0 +1,16 @@
+#id-test {
+    color: blue;
+}
+.class-test {
+    color: beige;   
+}
+h1 {
+    color: brown;
+}
+
+h1 {
+    color: aqua !important;
+}
+h2 {
+    color: blanchedalmond;
+}
