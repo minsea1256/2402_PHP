@@ -1,0 +1,48 @@
+.head {
+    padding: 5px 0px 1px 20px;
+    background-color: rgb(37, 37, 37);
+}
+h1 {
+    color: #fff;
+}
+.head-p {
+    background-color: rgb(37, 37, 37);
+    color: orange;
+}
+
+.cki-p {
+    background-color: rgb(37, 37, 37);
+    color: #fff;
+    padding: 20px;
+    margin-bottom: auto;
+}
+
+
+.content {
+    border: 1px solid #000;
+    text-align: center;
+}
+.content-h2 {
+    color: red;
+}
+.content-p {
+    font-weight: 900;
+    font-size: 18px;
+}
+span {
+    font-weight: 900;
+    color: blue;
+}
+
+
+
+.foodt {
+    border: 1px solid #000;
+    text-align: center;
+}
+.content-p {
+    font-weight: 900;
+}
+.content-p2 {
+    font-weight: 600;
+}
