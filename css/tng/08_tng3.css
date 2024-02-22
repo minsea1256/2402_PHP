@@ -1,0 +1,41 @@
+main {
+    height: 630px;
+}
+div {
+    position: relative;
+    display: inline-block;
+    border: 1px dashed #000;
+    width: 450px;
+    height: 250px;
+    padding: 20px;
+}
+.div-main1 {
+    position: absolute;
+    top: 110px;
+    left: 30px;
+}
+.div-main2 {
+    position: absolute;
+    top: 110px;
+    left: 550px;
+}
+.div-main3 {
+    position: absolute;
+    top: 430px;
+    left: 30px;
+}
+.div-main4 {
+    position: absolute;
+    top: 430px;
+    left: 550px;
+}
+
+footer {
+    width: 1030px;
+    margin: 10px;
+    background-color: #000;
+    color: #fff;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+}

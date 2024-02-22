@@ -1,0 +1,33 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    width: 100vw;
+    height: 20vh;
+    background-color: rgb(250, 150, 0);
+}
+main {
+    width: 100vw;
+    height: 60vh;
+    background-color: rgb(255, 181, 111);
+}
+footer {
+    width: 100vw;
+    height: 20vh;
+    background-color: rgb(255, 220, 156);
+    clear: left;
+}
+aside {
+    float: left;
+    width: 30%;
+    height: 100%;
+    background-color: blanchedalmond;
+}
+section {
+    float: left;
+    width: 70%;
+    height: 100%;
+    background-color: rgb(228, 197, 132);
+}

@@ -1,0 +1,7 @@
+div {
+    height: 300vh;
+    background-image: url('../img/min_1.jpg');
+    background-repeat: no-repeat;
+    background-position: top 10px right 10px;
+    background-clip: border-box;
+}
