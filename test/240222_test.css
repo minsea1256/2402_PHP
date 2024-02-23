@@ -1,26 +1,19 @@
 * {
-    margin: 0;
-    padding: 0;
-}
-ul, li {
-    list-style-type: none;
-    display: inline-block;
-    margin: 10px;
     text-align: center;
-    font-size: 12px;
-    width: 50px;
+}
+span {
+    color: tan;
+    font-weight: bold;
+    font-size: 20px;
 }
 
-.div-header {
-    width: 100hw;
-    background-color: gainsboro;
-    font-size: 20px;
-    font-weight: bold;
+ul {
+    list-style-type: none;
 }
-.div-header > li {
-    float: left;
+ul > li > ul {
+    display: none;
 }
-.nav-ul {
-    width: 100hw;
-    background-color: olive;
+
+ul > li:hover > ul {
+    display: block;
 }
