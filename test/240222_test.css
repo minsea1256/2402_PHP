@@ -1,0 +1,26 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+ul, li {
+    list-style-type: none;
+    display: inline-block;
+    margin: 10px;
+    text-align: center;
+    font-size: 12px;
+    width: 50px;
+}
+
+.div-header {
+    width: 100hw;
+    background-color: gainsboro;
+    font-size: 20px;
+    font-weight: bold;
+}
+.div-header > li {
+    float: left;
+}
+.nav-ul {
+    width: 100hw;
+    background-color: olive;
+}
