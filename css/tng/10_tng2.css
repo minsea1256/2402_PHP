@@ -1,0 +1,47 @@
+fieldset {
+    background-image: url('../img/min.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 500px;
+    height: 380px;
+}
+legend {
+    font-weight: 900;
+    color: rgb(255, 217, 0);
+    font-size: 40px;
+}
+input {
+    margin: 10px;
+}
+.label-before::before {
+    content: '*';
+    color: red;
+}
+#text, #number {
+    width: 170px;
+    background-color: transparent;
+}
+#text:focus, #number:focus, #range:focus {
+    outline: 3px solid red;
+}
+textarea {
+    margin: 5px;
+    background-color: transparent;
+    vertical-align: top;
+}
+input[type="radio"]:checked + label {
+    color: red;
+}
+div > p {
+    background-color: black;
+    font-weight: 400;
+    font-size: 15px;
+    color: #fff;
+    padding: 5px;
+    margin: 0;
+    display: none;
+}
+button:hover + p {
+    display: inline-block;
+}
