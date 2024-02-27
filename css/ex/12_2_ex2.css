@@ -1,0 +1,31 @@
+.container {
+    width: 500px;
+    height: 500px;
+    background-color: grey;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 5px;
+    justify-content: space-between;
+    align-content: space-between;
+}
+.item {
+    background-color: cyan;
+    border: 1px solid #000;
+}
+.row-1 {
+    width: 100%;
+}
+.row-2 {
+    width: 49%;
+}
+.oclumn-2 {
+    height: 48%;
+}
+.oclumn-3 {
+    height: 32%;
+}
+.item_box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}

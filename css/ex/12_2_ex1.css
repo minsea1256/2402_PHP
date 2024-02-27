@@ -1,0 +1,40 @@
+/* flex box - 행 또는 열로 항목의 무리를 배치하는 1차원 레이아웃 시스템 */
+.container {
+    background-color: antiquewhite;
+    /* padding: 10px 0; */
+    /* display: flex; - 가로로 배치 */
+    display: flex;
+    /* flex-direction: column; - 세로로 배치 */
+    /* flex-direction: row-reverse; - 세로 거울반대 반향으로 배치 */
+    /* flex-direction: row; - 가로로 배치 */
+    /* flex-direction: column-reverse; - 가로 거울반대 반향으로 배치 */
+    /* flex-direction: 주축의 방향을 조절하는 속성 */
+    /* flex-direction : reverse - 실무에서 햇깔리기 때문에 사용 안한다! */
+    flex-direction: row;
+    /* flex-wrap : 항목의 줄을 바꿀지 말지를 지정 */
+    flex-wrap: wrap;
+    /* flex-flow: flex-direction와 flex-wrap을 한번에 지정*/
+    flex-flow: row wrap;
+    /* justify-content: 주축을 기준으로 정렬; */
+    /* justify-content: space-evenly; */
+
+    /* align-items : 교차축 한줄을 기준으로 정렬 */
+    height: 200px;
+    /* align-items: stretch; */
+
+    /* align-content: 교차축 여러줄을 어떻게 정렬할 건가; */
+    align-content: space-evenly;
+    justify-content: space-between;
+    
+}
+
+/* .item5 {
+    align-self : 교차축 기준으로 하나의 아이템을 정렬
+    align-self: flex-end;
+} */
+.item {
+    width: 150px;
+    height: 30px;
+    border: 1px solid #000;
+    background-color: burlywood;
+}
