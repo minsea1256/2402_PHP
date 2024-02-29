@@ -1,0 +1,147 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a {
+    text-decoration: none;
+    color: #fff;
+}
+.container {
+    display: grid;
+    grid-template-rows: 20% 1fr;
+}
+
+/* header */
+.header {
+    height: 20rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    align-items: center;
+}
+.title_h {
+    font-weight: 900;
+    font-size: 3rem;
+    color: #fff;
+    align-content: center;
+    align-items: center;
+    margin-left: 2rem;
+}
+.header_title {
+    display: grid;
+    height: 100%;
+    padding: 2rem;
+    align-content: space-evenly;
+}
+
+.header_title > span {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #fff;
+}
+/* button */
+.button_dow > a {
+    background-color: goldenrod;
+    border-radius: 3px;
+    padding: 1rem;
+    font-weight: 600;
+    font-size: 20px;
+    align-self: end
+}
+.button_dow > a:hover {
+    opacity: 20%;
+    transition: 5s;
+}
+
+/* main */
+.main {
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+}
+.main_item {
+    border: 1px solid gray;
+    border-radius: 10px;
+    padding: 1rem;
+}
+.item_img {
+    height: 250px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.item_img > h3 {
+    position: relative;
+    background-color: rgb(31, 31, 31);
+    opacity: 80%;
+    color: #fff;
+    padding: 13px;
+    top: 200px;
+}
+
+.main_item > p {
+    margin-top: 1rem;
+    background-size: cover;
+    background-position: center;
+}
+
+/* button */
+.button_up {
+    background-color: goldenrod;
+    border-radius: 3px;
+    padding: 1rem;
+    text-align: center;
+    font-weight: 600;
+    font-size: 20px;
+    margin-top: 10px;
+    
+}
+.button_up:hover {
+    opacity: 20%;
+    transition: 5s;
+}
+.button_up_4 {
+    background-color: goldenrod;
+    border-radius: 3px;
+    padding: 1rem;
+    text-align: center;
+    font-weight: 600;
+    font-size: 20px;
+    margin-top: 32px;
+}
+
+
+/* footer */
+
+
+.footer-sticky {
+    position : fixed;
+    bottom: 0px;
+    background-color: rgb(77, 77, 77);
+    height: 70px;
+    text-align: center;
+
+}
+.footer-sticky > span {
+    color: #fff;
+    font-size: 12px;
+    line-height: 70px;
+}
+
+/* 반응형 */
+@media screen and (max-width: 750px) {
+    .header {
+        height: 30rem;
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .title_h {
+        margin-top: 4rem;
+    }
+}
