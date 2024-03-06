@@ -39,7 +39,7 @@ WHERE first_name = 'Mary'
 -- 생일이 1960/01/01 이상인 사원의 모든 정보를 조회
 SELECT *
 FROM employees
-WHERE birth_date >= 1960/01/01
+WHERE birth_date >= 19600101
 ;
 -- 입사일이 1990/12/25 이상인 사원의 사번, 이름, 성을 조회
 
@@ -146,4 +146,80 @@ ORDER BY last_name, first_name
 -- DISTINCT 키워드 : 검색 결과에서 중복되는 레코드 없이 조회
 SELECT DISTINCT emp_no
 FROM salaries
-WHERE emp_no = 10001;
+WHERE emp_no = 10001
+;
+
+-- GROUP BY 절, HAVING 절 : 그룹으로 묶어서 조회
+-- GROUP BY[그룹으로 묶을 컬럼] HAVING [집계함수 조건]
+SELECT
+	gender
+	,COUNT(gender)
+FROM employees
+GROUP BY gender
+;
+-- 현재 재직중인 직원의 직급별 사원수 조회
+SELECT 
+	title
+	,COUNT(title)
+FROM titles
+WHERE to_date >= 20240305
+GROUP BY title 
+;
+
+SELECT 
+	title
+	,COUNT(title)
+FROM titles
+WHERE to_date >= 20240305
+GROUP BY title HAVING title LIKE('%Engineer%')
+;
+-- 각 사원의 최고연봉을 조회
+SELECT
+	emp_no
+	,MAX(salary)
+FROM salaries
+GROUP BY emp_no
+;
+-- 각 사원의 최고연봉 중 80000 이상을 조회
+SELECT
+	emp_no
+	,MAX(salary)
+FROM salaries
+GROUP BY emp_no HAVING MAX(salary) >= 80000
+;
+-- AS : 컬럼에 별칭 부여 [한글은 절대 사용 금지]
+SELECT
+	emp_no 
+	,MAX(salary) AS max_sal
+FROM salaries AS sal
+GROUP BY emp_no HAVING MAX(salary) >= 80000
+;
+
+-- LIMIT, OFFSET : 출력하는 데이터의 개수 제한
+-- OFFSET :출력하는 데이터  시작점
+SELECT *
+FROM employees
+LIMIT 5 OFFSET 10
+-- OFFSET 키워드 생량하면 아래와 같은
+SELECT *
+FROM employees
+LIMIT 10, 5
+;
+
+-- 가장 높은 연을을 받는 사원 번호 조회
+SELECT emp_no
+		,MAX(salary) AS max_sal
+FROM salaries
+GROUP BY emp_no
+ORDER BY max_sal DESC 
+LIMIT 1
+;
+
+-- 재직중인 사원 중 급여 상위 5위까지 조회
+SELECT emp_no
+		,salary
+FROM salaries
+WHERE to_date >= 20240305
+ORDER BY salary DESC
+LIMIT 5
+;

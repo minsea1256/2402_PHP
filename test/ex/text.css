@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap');
+*{
+    font-family: "Gamja Flower", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+h1 {
+    text-align: center;
+}
+textarea {
+    background-color: blanchedalmond;
+}
+fieldset {
+    background-color: rgb(101, 149, 221);
+}
+legend {
+    background-color: blanchedalmond;
+    font-weight: bold;
+    font-size: 25px;
+    text-align: center;
+}

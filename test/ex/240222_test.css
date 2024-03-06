@@ -1,0 +1,19 @@
+* {
+    text-align: center;
+}
+span {
+    color: tan;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+ul {
+    list-style-type: none;
+}
+ul > li > ul {
+    display: none;
+}
+
+ul > li:hover > ul {
+    display: block;
+}

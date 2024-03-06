@@ -1,0 +1,68 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+  color: #fff;
+}
+.container {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+}
+
+/* haeder */
+.haeder {
+  background-color: palevioletred;
+  min-height: 100vh;
+}
+.logo {
+  font-size: 24px;
+  font-weight: 900;
+  color: #fff;
+  text-align: center;
+  margin: 3rem;
+}
+.item {
+  font-size: 20px;
+  padding: 0.5rem;
+}
+.item:hover {
+  background-color: rgb(104, 57, 73);
+  transition: all 2s;
+}
+
+/* input */
+form {
+  height: 50px;
+  background-color: gainsboro;
+}
+input[type="search"] {
+  padding: 0.2rem;
+  margin: 0.5rem;
+}
+
+
+/* mine */
+.mine {
+  display: grid;
+  grid-template-columns: repeat(3 , 1fr);
+  gap: 0.8rem;
+  padding: 0.8rem;
+}
+.mine_img {
+  background-color: beige;
+}
+.row-2 {
+  grid-row: 1 / 3;
+}
+.row-4 {
+  grid-row: 2 / 4;
+}
+.column-5 {
+  grid-column: 1 / 3;
+}
+.column-6 {
+  grid-column: 2 / 4;
+}
