@@ -43,7 +43,7 @@ SELECT
 	emp_no
 	,FLOOR AVG(salary) avg_sal
 FROM salaries
-GROUP BY emp_no);
+GROUP BY emp_no;
 
 -- 8. 사원별 급여의 평균이 30,000 ~ 50,000인,
 -- 사원번호와 평균급여를 조회해 주세요.
