@@ -7,14 +7,14 @@ FROM titles
 SELECT emp_no
 FROM salaries
 WHERE
-	 salary <= 60000
+	salary <= 60000
 ;
 
 -- 3. 급여가 60,000에서 70,000인 사원의 사번을 조회해 주세요.
 SELECT emp_no
 FROM salaries
 WHERE
-	 salary between 60000 AND 70000
+	salary between 60000 AND 70000
 ;
 
 -- 4. 사원번호가 10001, 10005인 사원의 사원테이블의 모든 정보를 조회해 주세요.
@@ -26,7 +26,7 @@ WHERE
 
 -- 5. 직급명에 "Engineer"가 포함된 사원의 사번과 직급을 조회해 주세요.	
 SELECT
-	 emp_no
+	emp_no
 	,title	
 FROM titles
 WHERE title = 'Engineer'
