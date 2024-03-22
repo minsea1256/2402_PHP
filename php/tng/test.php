@@ -1,30 +1,20 @@
 <?php
-
-// for($i = 0; $i <= 100; $i++) {
-//     for($j=0; $j<=100; $j+=3) {
-//         continue;
-//     }
-//     echo $i."\n";
-// }
-
-
+// $i = 1;
 // $count = 0;
-// for($i = 1; $i <= 100; $i++) {
-//     if ($i % 3)
+// while ($i<=100) {
+// 		if ($i % 3 != 0)
 // 		{
 // 			echo "$i ";
 // 			$count++;
-// 		}
+// 		}      
 // 		$i++;
 // }
 
-$i = 1;
-$count = 0;
-while ($i<=100) {
-		if ($i % 3 != 0)
-		{
-			echo "$i ";
-			$count++;
-		}      
-		$i++;
+$arr = range(1, 100);
+
+foreach($arr as $val) {
+	if(($val %  3) === 0) {
+		continue;
+	}
+	echo $val."입니다.\n";
 }
