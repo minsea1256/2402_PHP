@@ -57,3 +57,25 @@ function db_select_boards_paging(&$conn, &$array_param) {
     // 리턴
     return $result;
 }
+
+			
+// ■ Insert row to boards 게시판 테이블 레코드 작성철
+function db_insert_boards(&$conn, &$array_param){
+    // SQL 작성
+    $sql =
+        " INSERT INTO boards( "
+        ." title "
+        ."  ,content "
+        ." ) "
+        ." VALUES( "
+        ."  :title "
+        ."  ,:content "
+        ." ) "
+    ;
+
+    // Query 실행
+    $stmt = $conn->prepare($sql);
+    $stmt->execute($array_param);
+
+    return $stmt->rowCount();
+}	
