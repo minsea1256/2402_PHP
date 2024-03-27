@@ -173,14 +173,15 @@ input,textarea:focus {
 .blink {
     animation: blink 2s step-end infinite;
 }
-/* @-webkit-keyframes blink {
+
+@-webkit-keyframes blink {
     0% {
         color: #617AFF;
     }
     50% {
         color: white;
     }
-} */
+}
 
 /* 버튼 색상 */
 .now_page_color {
