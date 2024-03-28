@@ -2,9 +2,9 @@
 // 설정 정보
 require_once( $_SERVER["DOCUMENT_ROOT"]."/config.php"); // 설정 파일 호출
 require_once(FILE_LIB_DB); // DB관련 라이브러리
-$list_cnt = 5; // 한 페이지 최대 표시 수
+$list_cnt = 6; // 한 페이지 최대 표시 수
 $page_num = 1; // 페이지 번호 초기화
-$btn_page_cnt = 5; //블럭 페이지 최대 표시 수
+$btn_page_cnt = 3; //블럭 페이지 최대 표시 수
 
 try {
     // DB Connect
@@ -44,55 +44,53 @@ try {
         $conn = null;
     }
 }
-
-
 ?>
+
 
 <!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>메인 페이지</title>
-    <link rel="stylesheet" href="./css/common.css">
+    <title>Todo List</title>
+    <link rel="stylesheet" href="./css/todo.css">
 </head>
-<body>
-    <!-- 헤더 호출 -->
-    <?php require_once(FILE_HEADER); ?>
-    <main>
-        <div class="main-top">
-            <a href="./insert.php" class="a-button">글 작성</a>
-        </div>
-        <div class="main-middle">
-        <div class="item list-head">
-                <div class="board-no">게시글 번호</div>
-                <div class="board-title">게시글 제목</div>
-                <div class="board-createdat">작성 일자</div>
-            </div>
-            <?php
-            foreach($result as $item) {
-            ?>
-                <div class="item">
-                    <div class="item-no"><?php echo $item["no"] ?></div>
-                    <div class="item-title"><a href="./detail.php?no=<?php echo $item["no"] ?>&page=<?php echo $page_num ?>"><?php echo $item["title"] ?></a></div>
-                    <div class="item-createdat"><?php echo $item["created_at"] ?></div>
-                </div>
-            <?php
-            }
-            ?>
-        </div>
-        <div class="main-bottom">
-            <a href="./list.php?page=<?php echo $prev_page_num ?>" class="a-button small-button">이전</a>
-            <?php
+<body>    
+    <h1><a href="./list.php">TODO LIST</a></h1>
+    <div class="header">
+        <div class="main-button">
+        <a href="./list.php?page=<?php echo $prev_page_num ?>" class="a-button small-button">이전</a>
+        <?php
             for($num = $start_page; $num <= $end_page; $num++){
             // for($num = 1; $num <= $max_page_num; $num++){
-            ?>
-            <a href="./list.php?page=<?php echo $num ?>" class="a-button small-button <?php echo $num == $page_num  ? "now_page_color" : ""; ?>"><?php echo $num ?></a>
-            <?php
+        ?>
+        <a href="./list.php?page=<?php echo $num ?>" class="a-button small-button <?php echo $num == $page_num  ? "now_page_color" : ""; ?>"><?php echo $num ?></a>
+        <?php
             } 
-            ?>
-            <a href="./list.php?page=<?php echo $next_page_num ?>" class="a-button small-button">다음</a>
+        ?>
+        <a href="./list.php?page=<?php echo $next_page_num ?>" class="a-button small-button">다음</a>
         </div>
-    </main>
+    </div>
+    <div class="main" style="background-image: url('./img/lattice.png');">
+        <?php
+            foreach($result as $item) {
+        ?>
+        <div class="main-itme">
+            <div class="num-item">
+                <p class="main-date"><?php echo $item["created_at"] ?></p>
+                <div class="numder"><?php echo $item["no"] ?></div>
+            </div>
+            <div class="itme-button">
+                <input type="checkbox" id="check">
+                <label for="check"></label>
+                <div class="itme-button-a"><a href="./update.php?no=<?php echo $item["no"] ?>&page=<?php echo $page_num ?>"><?php echo $item["title"] ?></a></div>
+                <a href="./delete.php" class="itme-button-left">삭제</a>
+                <a href="./update.php" class="itme-button-right">수정</a>
+            </div>
+        </div>
+        <?php
+        }
+        ?>
+    </div>
 </body>
 </html>

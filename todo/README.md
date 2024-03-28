@@ -2,4 +2,4 @@
 
 xcopy 원본경로 카피경로 /E /Y
 
-예) xcopy D:\WorkSpace\2402_PHP\side_project\min_board\src C:\Apache24\htdocs /E /Y
+예) xcopy D:\WorkSpace\2402_PHP\todo\src C:\Apache24\htdocs /E /Y

@@ -85,9 +85,7 @@ try {
       $conn = null;
     }
 }
-
 ?>
-
 
 <!DOCTYPE html>
 <html lang="ko">
@@ -95,44 +93,18 @@ try {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>삭제 페이지</title>
-    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/todo.css">
 </head>
 <body>
-    <?php require_once(FILE_HEADER); ?>
-
-    <main>
-        <div class="main-top center">
-            <p class="blink">
-                삭제하면 영구적으로 복구 할 수 없습니다.
-                <br>
-                정말로 삭제 하시겠습니다?
-            </p>
-            </div>
-            <div class="main-middle">
-            <div class="line-itme">
-                <div class="line-title">게시글 번호</div>
-                <div class="line-content"><?php echo $item["no"] ?></div>
-            </div>
-            <div class="line-itme">
-                <div class="line-title">제목</div>
-                <div class="line-content"><?php echo $item["title"] ?></div>
-            </div>
-            <div class="line-itme">
-                <div class="line-title">내용</div>
-                <div class="line-content"><?php echo $item["content"] ?></div>
-            </div>
-            <div class="line-itme">
-                <div class="line-title">작성일자</div>
-                <div class="line-content"><?php echo $item["created_at"] ?></div>
-            </div>
+    <h1><a href="./list.php">TODO LIST</a></h1>
+    <div class="up-main" style="background-image: url('./img/lattice.png');">
+        <div class="de-main-itme">
+            <p class="blink">삭제 하시겠습니까?</p>
         </div>
-        <form action="./delete.php" method="post">
-            <div class="main-bottom">
-                <input type="hidden" name="no" value="<?php echo $no; ?>">
-                <button type="submit" class="a-button small-button">동의</button>
-                <a href="./detail.php?no=<?php echo $no ?>&page=<?php echo $page ?>" class="a-button small-button">취소</a>
-            </div>
-        </form>
-    </main>
-</body>  
-</html>
+        <div class="de-button">
+            <a href="./update.php">취소</a>
+            <a href="./list.php">확인</a>
+        </div>
+    </div>
+</body>
+</html> 
