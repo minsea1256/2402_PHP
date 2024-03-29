@@ -35,6 +35,10 @@ p {
     color: #FDFDF5;
     font-size: 1.5rem;
 }
+.main-p {
+    display: inline-block;
+    left: 0;
+}
 .main-button {
     text-align: right;
     width: 600px;

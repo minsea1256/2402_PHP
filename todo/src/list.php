@@ -35,6 +35,10 @@ try {
     ];
     $result = db_select_boards_paging($conn, $arr_param);
 
+    // 아이템 셋팅
+    $item = $result[0];
+    
+
 } catch(\Throwable $e) {
     echo $e->getMessage();
     exit; //위에 코드가 오류 있을때 밑에 코드 안 보이고 종료 시키고 싶을때 사용
@@ -59,16 +63,17 @@ try {
     <h1><a href="./list.php">TODO LIST</a></h1>
     <div class="header">
         <div class="main-button">
-        <a href="./list.php?page=<?php echo $prev_page_num ?>" class="a-button small-button">이전</a>
+        <a href="./insert.php?no=<?php echo $item["no"]; ?>&page=<?php echo $page_num;?>" class="plus-button">+</a>    
+        <a href="./list.php?page=<?php echo $prev_page_num ?>" class="a-button">이전</a>
         <?php
             for($num = $start_page; $num <= $end_page; $num++){
             // for($num = 1; $num <= $max_page_num; $num++){
         ?>
-        <a href="./list.php?page=<?php echo $num ?>" class="a-button small-button <?php echo $num == $page_num  ? "now_page_color" : ""; ?>"><?php echo $num ?></a>
+        <a href="./list.php?page=<?php echo $num ?>" class="a-button <?php echo $num == $page_num  ? "now_page_color" : ""; ?>"><?php echo $num ?></a>
         <?php
             } 
         ?>
-        <a href="./list.php?page=<?php echo $next_page_num ?>" class="a-button small-button">다음</a>
+        <a href="./list.php?page=<?php echo $next_page_num ?>" class="a-button">다음</a>
         </div>
     </div>
     <div class="main" style="background-image: url('./img/lattice.png');">
@@ -81,11 +86,13 @@ try {
                 <div class="numder"><?php echo $item["no"] ?></div>
             </div>
             <div class="itme-button">
-                <input type="checkbox" id="check">
-                <label for="check"></label>
+                <form action="./list.php" method="post">
+                    <input type="checkbox" id="chk_info <?php echo $item["no"];?>">
+                    <label for="chk_info <?php echo $item["no"];?>"></label>
+                </form>
                 <div class="itme-button-a"><a href="./update.php?no=<?php echo $item["no"] ?>&page=<?php echo $page_num ?>"><?php echo $item["title"] ?></a></div>
-                <a href="./delete.php" class="itme-button-left">삭제</a>
-                <a href="./update.php" class="itme-button-right">수정</a>
+                <a href="./delete.php?no=<?php echo $item["no"];?>&page=<?php echo $page_num; ?>" class="itme-button-left">삭제</a>
+                <a href="./update.php?no=<?php echo $item["no"];?>&page=<?php echo $page_num; ?>" class="itme-button-right">수정</a>
             </div>
         </div>
         <?php

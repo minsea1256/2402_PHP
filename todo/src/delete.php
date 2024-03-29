@@ -85,6 +85,7 @@ try {
       $conn = null;
     }
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -92,19 +93,29 @@ try {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>삭제 페이지</title>
+    <title>수정 페이지</title>
     <link rel="stylesheet" href="./css/todo.css">
 </head>
 <body>
     <h1><a href="./list.php">TODO LIST</a></h1>
     <div class="up-main" style="background-image: url('./img/lattice.png');">
-        <div class="de-main-itme">
-            <p class="blink">삭제 하시겠습니까?</p>
-        </div>
-        <div class="de-button">
-            <a href="./update.php">취소</a>
-            <a href="./list.php">확인</a>
-        </div>
+        <form action="./delete.php" method="post">
+            <div class="de-main-itme">
+                <p class="blink">삭제 하시겠습니까?</p>
+            </div>
+            <div class="up-main-itme">
+                <div class="num-item">
+                    <p class="main-date"><?php echo $item["created_at"]; ?></p>
+                    <div class="numder"><?php echo $item["no"] ?></div>
+                </div>
+                <textarea name="content" id="text" cols="50" rows="5" spellcheck="false"><?php echo $item["content"] ?></textarea>
+            </div>
+            <div class="insert-button">
+                <input type="hidden" name="no" value="<?php echo $no; ?>">
+                <a href="./list.php">취소</a>
+                <button type="submit" class="a-button small-button">삭제</button>
+            </div>
+        </form>
     </div>
 </body>
 </html> 
