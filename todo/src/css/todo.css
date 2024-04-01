@@ -106,7 +106,7 @@ p {
     justify-content: center;
     align-items: center;
 }
-.itme-button > a {
+form > a {
     background-color: #949AB2;
     font-size: 15px;
     padding: 5px;
@@ -133,13 +133,13 @@ p {
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
 }
-.itme-button > a:hover {
+form > a:hover {
     background-color: #4A5372;
 }
 /* checkbox */
-input[type="checkbox"]{
+/* input[type="checkbox"]{
     display: none;
-  }
+}
 input[type="checkbox"] + label{
     display: flex;
     width: 20px;
@@ -148,8 +148,8 @@ input[type="checkbox"] + label{
     align-items: flex-end;
     justify-content: center;
     margin: 3px;
-  }
-input[id^="chk_info"]:checked + label::after{
+}
+input[id^="chk_label"]:checked + label::after{
     content:'✔';
     color: #FDFDF5;
     font-size: 25px;
@@ -157,8 +157,32 @@ input[id^="chk_info"]:checked + label::after{
     height: 30px;
     text-align: center;
 }
-input[id^="chk_info"]:checked ~ p {
+input[id^="chk_label"]:checked ~ .itme-button-a {
     text-decoration: line-through;
+    color: #FDFDF5;
+} */
+button[id^="chk_label"] {
+    display: none;
+}
+.chk-label {
+    display: flex;
+    width: 20px;
+    height: 20px;
+    border:1px solid #FDFDF5;
+    justify-content: center;
+    align-items: center;
+}
+.chk-label-checked {
+    color: #FDFDF5;
+    font-size: 20px;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+}
+
+.chk-label-checked ~ .itme-button-a {
+    text-decoration: line-through;
+    color: #FDFDF5;
 }
 
 /* update */

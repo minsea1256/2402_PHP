@@ -108,7 +108,7 @@ try {
                     <p class="main-date"><?php echo $item["created_at"]; ?></p>
                     <div class="numder"><?php echo $item["no"] ?></div>
                 </div>
-                <textarea name="content" id="text" cols="50" rows="5" spellcheck="false"><?php echo $item["content"] ?></textarea>
+                <textarea name="content" id="text" cols="50" rows="5" spellcheck="false" readonly><?php echo $item["content"] ?></textarea>
             </div>
             <div class="insert-button">
                 <input type="hidden" name="no" value="<?php echo $no; ?>">

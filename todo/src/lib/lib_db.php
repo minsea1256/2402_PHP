@@ -40,6 +40,7 @@ function db_select_boards_paging(&$conn, &$array_param) {
             ." no "
             ." ,title "
             ." ,created_at "
+            ." ,checked_at "
             ." FROM "
             ."  boards "
             ." WHERE "
@@ -141,6 +142,23 @@ function db_update_boards_no(&$conn, &$array_param) {
     $stmt = $conn->prepare($sql);
     $stmt->execute($array_param);
 
+    // 리턴
+    return $stmt->rowCount();
+}
+
+
+function db_update_contents_checked_at(&$conn, &$array_param) {
+    $sql =
+        " UPDATE boards "
+        ." SET "
+        ." checked_at = CASE WHEN " 
+        ." checked_at IS NULL THEN NOW() ELSE NULL END "
+        ." WHERE " 
+        ." no = :no "
+    ;
+    // Query 실행
+    $stmt = $conn->prepare($sql);
+    $stmt->execute($array_param);
     // 리턴
     return $stmt->rowCount();
 }

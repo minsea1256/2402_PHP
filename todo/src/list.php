@@ -37,7 +37,6 @@ try {
 
     // 아이템 셋팅
     $item = $result[0];
-    
 
 } catch(\Throwable $e) {
     echo $e->getMessage();
@@ -48,8 +47,8 @@ try {
         $conn = null;
     }
 }
-?>
 
+?>
 
 <!DOCTYPE html>
 <html lang="ko">
@@ -82,17 +81,19 @@ try {
         ?>
         <div class="main-itme">
             <div class="num-item">
-                <p class="main-date"><?php echo $item["created_at"] ?></p>
                 <div class="numder"><?php echo $item["no"] ?></div>
-            </div>
+                <p class="main-date"><?php echo $item["created_at"] ?></p>
+            </div>   
             <div class="itme-button">
-                <form action="./list.php" method="post">
-                    <input type="checkbox" id="chk_info <?php echo $item["no"];?>">
-                    <label for="chk_info <?php echo $item["no"];?>"></label>
+                 <form action="./chk.php" method="post">
+                     <button type="submit" id="chk_label<?php echo $item["no"];?>"></button>
+                     <label class="chk-label <?php echo isset($item["checked_at"]) ? "chk-label-checked" : "" ?>" for="chk_label<?php echo $item["no"];?>"><?php echo isset($item["checked_at"]) ? "✔" : "" ?></label>
+                     <input type="hidden" name="no" value="<?php echo $item["no"]; ?>">
+                     <input type="hidden" name="page" value="<?php echo $page_num; ?>">
+                     <div class="itme-button-a"><a href="./update.php?no=<?php echo $item["no"] ?>&page=<?php echo $page_num ?>"><?php echo $item["title"] ?></a></div>
+                     <a href="./delete.php?no=<?php echo $item["no"];?>&page=<?php echo $page_num; ?>" class="itme-button-left">삭제</a>
+                     <a href="./update.php?no=<?php echo $item["no"];?>&page=<?php echo $page_num; ?>" class="itme-button-right">수정</a>
                 </form>
-                <div class="itme-button-a"><a href="./update.php?no=<?php echo $item["no"] ?>&page=<?php echo $page_num ?>"><?php echo $item["title"] ?></a></div>
-                <a href="./delete.php?no=<?php echo $item["no"];?>&page=<?php echo $page_num; ?>" class="itme-button-left">삭제</a>
-                <a href="./update.php?no=<?php echo $item["no"];?>&page=<?php echo $page_num; ?>" class="itme-button-right">수정</a>
             </div>
         </div>
         <?php
