@@ -134,6 +134,8 @@ function db_update_boards_no(&$conn, &$array_param) {
         ."  title = :title "	
         ."  ,content = :content "
         ."  ,updated_at = NOW() "
+        // 체크한 게시물 수정시 체크해제
+        // ." ,checked_at = NULL "
         ." WHERE "		
         ."  no = :no "	
     ;
