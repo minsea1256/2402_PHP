@@ -106,7 +106,7 @@ p {
     justify-content: center;
     align-items: center;
 }
-form > a {
+.button-a > a {
     background-color: #949AB2;
     font-size: 15px;
     padding: 5px;
@@ -144,7 +144,7 @@ input[type="checkbox"] + label{
     display: flex;
     width: 20px;
     height: 20px;
-    border:1px solid #FDFDF5;
+    border:1px solid #FDFDF5;   
     align-items: flex-end;
     justify-content: center;
     margin: 3px;
@@ -161,28 +161,37 @@ input[id^="chk_label"]:checked ~ .itme-button-a {
     text-decoration: line-through;
     color: #FDFDF5;
 } */
+.item-button-chk {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+}
+
+
 button[id^="chk_label"] {
     display: none;
 }
 .chk-label {
-    display: flex;
     width: 20px;
     height: 20px;
     border:1px solid #FDFDF5;
-    justify-content: center;
-    align-items: center;
+    
 }
 .chk-label-checked {
+    display: flex;
     color: #FDFDF5;
     font-size: 20px;
     width: 20px;
     height: 20px;
     text-align: center;
+    align-items: center;
+    justify-content: center; 
+   
 }
-
-.chk-label-checked ~ .itme-button-a {
+.color {
+    color: #949AB2;
     text-decoration: line-through;
-    color: #FDFDF5;
 }
 
 /* update */

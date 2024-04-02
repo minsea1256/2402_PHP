@@ -121,7 +121,7 @@ try {
             <div class="up-main-itme">
                 <div class="num-item">
                     <p class="main-date"><?php echo $item["created_at"]; ?></p>
-                    <div class="numder"><?php echo $item["no"]; ?></div>
+                    <div class="numder <?php echo $item["no"]; ?>"></div>
                 </div>
                 <textarea name="content" id="text" cols="50" rows="5" spellcheck="false"><?php echo $item["content"]; ?></textarea>
             </div>

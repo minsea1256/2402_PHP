@@ -85,14 +85,18 @@ try {
                 <p class="main-date"><?php echo $item["created_at"] ?></p>
             </div>   
             <div class="itme-button">
-                 <form action="./chk.php" method="post">
-                     <button type="submit" id="chk_label<?php echo $item["no"];?>"></button>
-                     <label class="chk-label <?php echo isset($item["checked_at"]) ? "chk-label-checked" : "" ?>" for="chk_label<?php echo $item["no"];?>"><?php echo isset($item["checked_at"]) ? "✔" : "" ?></label>
-                     <input type="hidden" name="no" value="<?php echo $item["no"]; ?>">
-                     <input type="hidden" name="page" value="<?php echo $page_num; ?>">
-                     <div class="itme-button-a"><a href="./update.php?no=<?php echo $item["no"] ?>&page=<?php echo $page_num ?>"><?php echo $item["title"] ?></a></div>
-                     <a href="./delete.php?no=<?php echo $item["no"];?>&page=<?php echo $page_num; ?>" class="itme-button-left">삭제</a>
-                     <a href="./update.php?no=<?php echo $item["no"];?>&page=<?php echo $page_num; ?>" class="itme-button-right">수정</a>
+                <form action="./chk.php" method="post">
+                     <div class="itme-button-a"><a href="./update.php?no=<?php echo $item["no"] ?>&page=<?php echo $page_num ?>" class="<?php echo isset($item["checked_at"]) ? "color" : "" ?>"><?php echo $item["title"] ?></a></div>
+                     <div class = "item-button-chk">
+                         <button type="submit" id="chk_label<?php echo $item["no"];?>"></button>
+                         <label class="chk-label <?php echo isset($item["checked_at"]) ? "chk-label-checked" : "" ?>" for="chk_label<?php echo $item["no"];?>"><?php echo isset($item["checked_at"]) ? "✔" : "" ?></label>
+                        <div class="button-a">
+                            <a href="./delete.php?no=<?php echo $item["no"];?>&page=<?php echo $page_num; ?>" class="itme-button-left">삭제</a>
+                            <a href="./update.php?no=<?php echo $item["no"];?>&page=<?php echo $page_num; ?>" class="itme-button-right">수정</a>
+                        </div>
+                    </div>
+                    <input type="hidden" name="no" value="<?php echo $item["no"]; ?>">
+                    <input type="hidden" name="page" value="<?php echo $page_num; ?>">
                 </form>
             </div>
         </div>
