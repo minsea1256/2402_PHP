@@ -46,7 +46,8 @@ function db_select_boards_paging(&$conn, &$array_param) {
             ." WHERE "
             ."  deleted_at IS NULL "
             ." ORDER BY "
-            ."  no DESC "
+            ." checked_at " 
+            ." ,created_at DESC "
             ." LIMIT :list_cnt OFFSET :offset "
         ;
 
