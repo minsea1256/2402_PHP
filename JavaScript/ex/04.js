@@ -9,7 +9,7 @@ var num1 = 1; //최초 선언
 var num1 = 2; //중복 선언
 num1 = 3; // 재할당
 
-// let으로 사용하는 것이 좋다
+// var보다는 let으로 사용하는 것이 좋다
 // let : 중복 선언 불가능, 재할당 가능, 블록레벨 스코프 [**추천**]
 let num2 = 2; //최초 선언
 // let num2 = 3; 중복 선언
@@ -81,7 +81,7 @@ let letNull = null;
 
 // undefined 값이 할당 되어 있지 않은 상태
 let letUndefined;
-
+// 자바스크립트에서 배열은 객체로 인식한다
 // object 객체
 let obj = {
     key1: "val1",
@@ -91,10 +91,9 @@ let obj = {
 // Array 배열
 let arr = [1, 2, 3];
 
-// symbol 심볼 :
+// symbol 심볼
 let letStr1 = "심볼1";
 let letStr2 = "심볼1";
-
 let letSymbol1 = Symbol("심볼1");
 let letSymbol2 = Symbol("심볼1");
 
