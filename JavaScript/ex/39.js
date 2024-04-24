@@ -1,4 +1,4 @@
-// 요소선택
+// 요소선택[DOW]] 동적처리의 기본이되는 코드, 자바에서 제일 많이 사용하는 코드
 // --------------------
 // 고유한 ID로 요소를 선택
 // document.getElementById('해당 id');
@@ -81,6 +81,11 @@ TITLE.classList.toggle('none');
 
 // 리스트의 요소들의 글자색을 짝수는 빨강, 홀수는 파랑으로 수정
 const list = document.querySelectorAll('ul > li');
+
+// 다른 방식 (참/거짓[삼항연산자])
+list.forEach((item, key) => (item.style.color = key %2 === 0 ? 'red' : 'blue'));
+
+// 다른 방식 (루프문 if이용)
 list.forEach((val, key) => {
         if(key %2 === 0){
             val.style.color = 'red';
@@ -94,3 +99,48 @@ const UL_LI_ODD = document.querySelectorAll('#ul li:nth-child(odd)');
 UL_LI_ODD.forEach(node => node.style.color = 'red');
 const UL_LI_EVEN = document.querySelectorAll('#ul li:nth-child(even)');
 UL_LI_EVEN.forEach(node => node.style.color = 'blue');
+
+
+// -----------------------------------------------------------------------------------------------------------------
+// 새로운 요소 생성 : 같은 요소는 한개만 적용이 가능하다
+// -----------------------------------------------------------------------------------------------------------------
+// 과정 : 새로운 요소 생성 -> 요소 선택 -> 선택한 요소안에 삽입[삽입 기준은 부모요소]
+// 새로운 요소 생성
+// createElement(클래스명) : 새로운 요소 생성
+const NEW_LI = document.createElement('li');
+NEW_LI.innerHTML = '광산게임';
+
+// 요소 선택
+const TARGET = document.querySelector('#ul'); // 삽입할 부모요소 선택
+
+// 요소안에 삽입
+// appendChild(노드) : 해당 부모 노드(요소)에 마지막 자식으로 노드(요소) 추가
+// 요소는 한개만 적용이 가능하다 , 여러줄은 루프문을 이용해야한다
+TARGET.appendChild(NEW_LI); //추가
+
+// 동일한 형태의 요소를 여러개 추가하는 방법
+// ex)인스타그램에서 휠 올릴때 새로운 아이들 추가 [기존에 있는 애들은 죽은흔적 새로불려오는 애들은 새로 태어난 애들]
+for(let i = 0; i < 3; i++) {
+    const NEW_LI = document.createElement('li');
+    NEW_LI.innerHTML = '광산게임'; // 요소 생성
+    const TARGET = document.querySelector('#ul'); // 삽입할 부모요소 선택
+    TARGET.appendChild(NEW_LI); //추가
+}
+
+// insertBefore(새로운노드, 기준노드) : 해당 부모 노드(요소)의 자식인 기준노드(요소) 앞에 새로운 노드(요소) 추가
+const NEW_LI2 = document.createElement('li');
+NEW_LI2.innerHTML = '굴착소년쿵야'; //새로운 노드
+
+const hyeunSoo = document.querySelector('#ul > li:nth-child(3)'); // 자식인 기준노드
+
+TARGET.insertBefore(NEW_LI2, hyeunSoo); //요소 추가
+
+// 프리셀을 스페이스와 사과게임 사이에 넣기
+// 선택요소 앞으로 추가
+const NEW_LI3 = document.createElement('li');
+NEW_LI3.innerHTML = '프리셀'; //새로운 노드
+const APPLE = document.querySelector('#apple'); // 자식인 기준노드
+TARGET.insertBefore(NEW_LI3, APPLE); //요소 추가
+
+// removeChild(노드) : 해당 부모 노드의 자식을 삭제
+TARGET.removeChild(NEW_LI3); // 삭제

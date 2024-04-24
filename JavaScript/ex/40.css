@@ -1,0 +1,26 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.modal-container {
+    background-color: transparent;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.modal-item {
+    margin: 30% auto;
+    background-color: deepskyblue;
+    width: 50%;
+    height: 50%;
+}
+.display-none {
+    display: none;
+}
+.modal-item > h1 {
+    text-align: center;
+    line-height: 50vh;
+}
