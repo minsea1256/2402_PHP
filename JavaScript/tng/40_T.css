@@ -1,0 +1,19 @@
+.container {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    /* background-color: transparent; */
+    background-color: red;
+    top: 300px;
+    left: 300px;
+}
+.box {
+    position: absolute;
+    width: 70%;
+    height: 70%;
+    /* background-color: bisque; */
+    transform: translate(22.5%, 22.5%);
+}
+.busted {
+    background-color: beige;
+}
