@@ -38,9 +38,11 @@ function myMakeImg(data) {
 // API 삭제 이벤트
 const BTN_BT = document.querySelector('#btn-dt');
 BTN_BT.addEventListener('click', function() {
+    // ' '빈 문자열 방법
     // const BTN_BT = document.querySelector('.img-container');
     // BTN_BT.innerHTML = ' ';
-
+    
+    //  remove() 방법 : 한개씩 없어진다
     // const BTN_BT = document.querySelector('.img-container');
     // BTN_BT.remove();
 
