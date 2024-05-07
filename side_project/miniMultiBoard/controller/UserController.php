@@ -4,6 +4,8 @@ use model\UsersModel;
 use lib\UserValidator;
 
 class UserController extends Controller {
+    protected $arrUserList = []; // 유저 정보
+
     // 로그인 페이지로 이동
     protected function loginGet(){
         return "login.php";
@@ -145,4 +147,64 @@ class UserController extends Controller {
         return base64_encode($pw.$email);
     }
     
+
+    // 회원수정 페이지로 이동
+    protected function retouchGet() {
+        
+        // 유저 입력 정보 획득
+        $requestData = [
+            "u_id"     => $_SESSION["u_id"]
+        ];
+
+        // 유저정보 획득
+        $modelUsers = new UsersModel();
+        $this->arrUserList  = $modelUsers->getUserInfo($requestData);
+
+        // 로케이션 처리
+        return "retouch.php";
+    }
+
+    protected function retouchPost() {
+        $requestData = [
+            "u_id"     => $_SESSION["u_id"]
+        ];
+        // 유저정보 획득
+        $modelUsers = new UsersModel();
+        $this->arrUserList  = $modelUsers->getUserInfo($requestData);
+
+        // 유저 정보 업데이트
+        $requestData = [
+            "u_name" => $_POST["u_name"]
+            ,"u_pw" => $_POST["u_pw"]
+            ,"u_id" => $_SESSION["u_id"]
+        ];
+        $requestData1 = [
+            "u_pw" => $_POST["u_pw"]
+            ,"u_name" => $_POST["u_name"]
+            ,"u_pw_chk" => $_POST["u_pw_chk"]
+        ];
+
+        // 유효성 체크
+        $resultValidator = UserValidator::chkValidator($requestData1);
+        if (count($resultValidator) > 0) {
+                $this->arrErrorMsg = $resultValidator;
+                return "retouch.php";
+        }
+        // 비번 암호화
+        $requestData["u_pw"] = $this->encryptionPassword($requestData["u_pw"], $this->arrUserList["u_email"]);
+
+        // 업데이트 획득
+        $modelUsers = new UsersModel();
+        $modelUsers->beginTransaction(); // 트랜잭션 시작
+        if($modelUsers->upDate($requestData) === 1){
+            $modelUsers->commit();
+            return "Location: /board/list";
+        }else {
+            $modelUsers->rollBack();
+            $this->arrErrorMsg = "회원정보 수정 안됨";
+            return "retouch.php"; 
+        }
+    }
+
 }
+

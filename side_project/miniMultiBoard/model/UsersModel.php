@@ -63,4 +63,24 @@ class UsersModel extends Model {
             exit; 
         }
     }
+
+    public function upDate($paramArr) {
+        try {
+            $sql = 
+                " UPDATE users "
+                ." SET "
+                ."  u_name = :u_name "
+                ."  ,u_pw = :u_pw "
+                ." WHERE "
+                ."  u_id = :u_id "
+            ;
+            $stmt = $this->conn->prepare($sql);
+            $stmt->execute($paramArr);
+            return $stmt->rowCount();
+
+        } catch (\Throwable $th) {
+            echo "UsersModel -> upDate(), ".$th->getMessage();
+            exit; 
+        }
+    }
 }

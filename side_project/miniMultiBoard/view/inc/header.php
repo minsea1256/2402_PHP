@@ -26,11 +26,12 @@
                             </ul>
                         </li>
                     </ul>
+                    <a href="/user/retouch" class="navbar-nav nav-link text-light" role="button">회원정보수정</a>
                     <a href="/user/logout" class="navbar-nav nav-link text-light" role="button">로그아웃</a>
                 </div>
-            <?php
+                <?php
                 }
-            ?>
+                ?>
         </div>
     </nav>
 </header>

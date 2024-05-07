@@ -1,6 +1,9 @@
 <?php
 namespace controller;
 use model\BoardsnameModel;
+use model\UsersModel;
+
+
 
 class Controller {
     // 에러메세지

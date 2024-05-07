@@ -30,7 +30,7 @@
             <!-- 이미지 안 넣고 적용하는 방법 -->
             <?php
                 if(!empty($item["b_img"])) {
-                    ?>
+            ?>
             <img src="<?php echo $item["b_img"]; ?>" class="card-img-top">
             <?php
                 }
