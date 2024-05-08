@@ -27,12 +27,18 @@ class UserValidator {
                 $arrErrorMag[] = "비밀번호는 영어 대소문자 및 숫자, 특수문자(!,@) 8~20 이하로 작성해주세요.";
             }
         }
-        // 패스워드 체크
-        if(array_key_exists("u_pw", $param_arr) && array_key_exists("u_pw_chk", $param_arr)) {
+        // 패스워드 확인 체크 : 동일 한지만 확인만 한다
+        if(array_key_exists("u_pw_chk", $param_arr)) {
             if($param_arr["u_pw"] !== $param_arr["u_pw_chk"]) {
-                $arrErrorMag[] = "비밀번호는 다름";
+                $arrErrorMag[] = "비밀번호와 비밀번호 확인이 다릅니다.";
             }
         }
+        // 패스워드 확인 체크 또 다른 방법
+        // if(array_key_exists("u_pw", $param_arr) && array_key_exists("u_pw_chk", $param_arr)) {
+        //     if($param_arr["u_pw"] !== $param_arr["u_pw_chk"]) {
+        //         $arrErrorMag[] = "비밀번호는 다름";
+        //     }
+        // }
         // 이름 체크
         if(array_key_exists("u_name", $param_arr)) {
             if(preg_match($patternName, $param_arr["u_name"], $matches) === 0) {

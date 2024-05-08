@@ -4,7 +4,12 @@ use model\UsersModel;
 use lib\UserValidator;
 
 class UserController extends Controller {
-    protected $arrUserList = []; // 유저 정보
+    private $arrUserList = []; // 유저 정보
+
+    // getter 유저 정보
+    public function getUserInfo($key) {
+        return $this->arrUserList[$key];
+    }
 
     // 로그인 페이지로 이동
     protected function loginGet(){
@@ -151,9 +156,9 @@ class UserController extends Controller {
     // 회원수정 페이지로 이동
     protected function retouchGet() {
         
-        // 유저 입력 정보 획득
+        // 회원정보 획득
         $requestData = [
-            "u_id"     => $_SESSION["u_id"]
+            "u_id" => $_SESSION["u_id"]
         ];
 
         // 유저정보 획득
@@ -163,48 +168,89 @@ class UserController extends Controller {
         // 로케이션 처리
         return "retouch.php";
     }
-
+    // 회원 정보 수정 처리
     protected function retouchPost() {
-        $requestData = [
-            "u_id"     => $_SESSION["u_id"]
-        ];
-        // 유저정보 획득
-        $modelUsers = new UsersModel();
-        $this->arrUserList  = $modelUsers->getUserInfo($requestData);
-
-        // 유저 정보 업데이트
         $requestData = [
             "u_name" => $_POST["u_name"]
             ,"u_pw" => $_POST["u_pw"]
-            ,"u_id" => $_SESSION["u_id"]
-        ];
-        $requestData1 = [
-            "u_pw" => $_POST["u_pw"]
-            ,"u_name" => $_POST["u_name"]
             ,"u_pw_chk" => $_POST["u_pw_chk"]
         ];
 
-        // 유효성 체크
-        $resultValidator = UserValidator::chkValidator($requestData1);
-        if (count($resultValidator) > 0) {
-                $this->arrErrorMsg = $resultValidator;
-                return "retouch.php";
-        }
-        // 비번 암호화
-        $requestData["u_pw"] = $this->encryptionPassword($requestData["u_pw"], $this->arrUserList["u_email"]);
-
-        // 업데이트 획득
+        // 유저정보 획득
+        $selectData = [
+            "u_id"  => $_SESSION["u_id"]
+        ];
         $modelUsers = new UsersModel();
+        $this->arrUserList  = $modelUsers->getUserInfo($selectData);
+        
+        // 유효성 체크
+        $resultValidator = UserValidator::chkValidator($requestData);
+        if(count($resultValidator) > 0) {
+            $this->arrErrorMsg = $resultValidator;
+            return "retouch.php";
+        }
+
+        // 유저 정보 업데이트
+        $updateDate = [
+            "u_id"  => $_SESSION["u_id"]
+            ,"u_name" => $requestData["u_name"]
+            ,"u_pw"  => $this->encryptionPassword($requestData["u_pw"], $this->getUserInfo("u_email")) // 암호화 하기 위해서 비번과 이메일를 불려와 암호화 진행하다
+        ];
         $modelUsers->beginTransaction(); // 트랜잭션 시작
-        if($modelUsers->upDate($requestData) === 1){
-            $modelUsers->commit();
-            return "Location: /board/list";
-        }else {
+        $resultUpdate = $modelUsers->upDate($updateDate);
+        if ($resultUpdate !== 1) {
             $modelUsers->rollBack();
-            $this->arrErrorMsg = "회원정보 수정 안됨";
+            $this->arrErrorMsg = ["회원정보 수정 실패"];
             return "retouch.php"; 
         }
+
+        $modelUsers->commit();
+        return "Location: /board/list";
     }
+
+    // ----------------------------------------------------------------------------------------
+    // 회원 정보 수정 처리 또 다른 방법
+    // protected function retouchPost() {
+    //     $requestData = [
+    //         "u_id"     => $_SESSION["u_id"]
+    //     ];
+    //     // 유저정보 획득
+    //     $modelUsers = new UsersModel();
+    //     $this->arrUserList  = $modelUsers->getUserInfo($requestData);
+
+    //     // 유저 정보 업데이트
+    //     $requestData = [
+    //         "u_name" => $_POST["u_name"]
+    //         ,"u_pw" => $_POST["u_pw"]
+    //         ,"u_id" => $_SESSION["u_id"]
+    //     ];
+    //     $requestData1 = [
+    //         "u_pw" => $_POST["u_pw"]
+    //         ,"u_name" => $_POST["u_name"]
+    //         ,"u_pw_chk" => $_POST["u_pw_chk"]
+    //     ];
+
+    //     // 유효성 체크
+    //     $resultValidator = UserValidator::chkValidator($requestData1);
+    //     if (count($resultValidator) > 0) {
+    //             $this->arrErrorMsg = $resultValidator;
+    //             return "retouch.php";
+    //     }
+    //     // 비번 암호화
+    //     $requestData["u_pw"] = $this->encryptionPassword($requestData["u_pw"], $this->arrUserList["u_email"]);
+
+    //     // 업데이트 획득
+    //     $modelUsers = new UsersModel();
+    //     $modelUsers->beginTransaction(); // 트랜잭션 시작
+    //     if($modelUsers->upDate($requestData) === 1){
+    //         $modelUsers->commit();
+    //         return "Location: /board/list";
+    //     }else {
+    //         $modelUsers->rollBack();
+    //         $this->arrErrorMsg = "회원정보 수정 안됨";
+    //         return "retouch.php"; 
+    //     }
+    // }
 
 }
 

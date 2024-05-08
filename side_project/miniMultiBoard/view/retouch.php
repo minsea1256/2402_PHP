@@ -21,7 +21,7 @@
             <!-- 에러 메시지 -->
             <?php require_once("view/inc/errorMag.php"); ?>
             <label for="u_name" class="form-label" >이름</label>
-            <input type="text" class="form-control mb-3" id="u_name" name="u_name" value="<?php echo $this->arrUserList['u_name'] ?>" required>
+            <input type="text" class="form-control mb-3" id="u_name" name="u_name" value="<?php echo $this->getUserInfo('u_name') ?>" required>
         
             <label for="u_pw" class="form-label">비밀번호</label>
             <input type="password" class="form-control mb-3" id="u_pw" name="u_pw" >
@@ -29,7 +29,7 @@
             <label for="u_pw_chk" class="form-label">비밀번호 확인</label>
             <input type="password" class="form-control mb-3" id="u_pw_chk" name="u_pw_chk" >
 
-            <button id="my-btn-complete" type="submit" class="btn btn-dark">수정</button>
+            <button id="my-btn-complete" type="submit" class="btn btn-dark">완료</button>
             <a href="/board/list" class="btn btn-secondary">취소</a>
         </form>
     </main>

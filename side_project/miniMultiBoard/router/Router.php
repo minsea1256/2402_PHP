@@ -79,9 +79,9 @@ class Router {
         }else if($url === "user/retouch") {
             // 회원정보수정 페이지
             if($httpMethod === "GET") {
-                new UserController("retouchGet");
+                new UserController("retouchGet"); // 페이지 불려와 화면 출력만 한다
             } else {
-                new UserController("retouchPost");
+                new UserController("retouchPost"); // 정보를 보낸다
             }
         }
         // 예외 처리
