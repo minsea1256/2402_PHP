@@ -104,6 +104,45 @@ Route::get('/send', function() {
     ->with('data', $arr);
 });
 
+// ---------------------------------
+// 컨트롤러 연결
+// ---------------------------------
+// 커맨드로 컨트롤러 생성 : php artisan make:controller 컨트롤러 명
+use App\Http\Controllers\TestController;
+Route::get('/test', [TestController::class, 'index']);
+// TestController->create() : get
+Route::get('/test/create', [TestController::class, 'create']);
+
+// ---------------------------------
+// 블레이드 템플릿 연습용
+// ---------------------------------
+use App\Http\Controllers\EduController;
+use App\Http\Controllers\UserController;
+
+Route::get('/edu', [EduController::class, 'index']);
+
+
+// ---------------------------------
+// DB 관련 연습용
+// ---------------------------------
+Route::get('/user', [UserController::class, 'eduUser']);
+
+
+
+
+
+
+// ---------------------------------
+//  리소스 라우터
+// ---------------------------------
+use App\Http\Controllers\TaskController;
+Route::resource('task', TaskController::class);
+
+
+
+
+
+
 
 
 
