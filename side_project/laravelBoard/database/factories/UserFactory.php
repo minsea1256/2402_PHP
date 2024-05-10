@@ -17,7 +17,7 @@ class UserFactory extends Factory
      */
     public function definition()
     {
-        $date = $this->faker->dateTimeBetween('-30 years');
+        $date = $this->faker->dateTimeBetween('-3 years');
         return [
             'name' => $this->faker->name(), // 더미 데이터 생성하는 라이브러리
             'email' => $this->faker->unique()->safeEmail(),
