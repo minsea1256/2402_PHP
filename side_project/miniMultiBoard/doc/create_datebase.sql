@@ -70,7 +70,8 @@ VALUES('1', '2', '집가고싶다!!!!', '집으로 보내줘!!!!!', '/view/img/I
 INSERT INTO boards(u_id, b_type, b_title, b_content, b_img)
 VALUES('1', '0', '힐링~', '❤❤❤❤', '/view/img/5bf7d81020d7fde00d3f81752d868b08_mp4.gif');
 
-
+UPDATE users(u_id, u_name, u_email, u_pw)
+VALUES('1', test, test@test.com, qwerty@1234);
 
 
 
