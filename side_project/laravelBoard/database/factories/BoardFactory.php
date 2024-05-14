@@ -17,14 +17,14 @@ class BoardFactory extends Factory
      *
      * @return array<string, mixed>
      */
-    public function definition()
+ function definition()
     {
         $arrImg = [
-            '/public/img/img.gif'
-            ,'/public/img/img (1).gif'
-            ,'/public/img/d2c9362e660d12979932821fc4401e2e.gif'
-            ,'/public/img/cfe1f6af609f2d93f329bdd9381d3220.gif'
-            ,'/public/img/1517493790809.gif'
+            '/img/img.gif'
+            ,'/img/img (1).gif'
+            ,'/img/d2c9362e660d12979932821fc4401e2e.gif'
+            ,'/img/cfe1f6af609f2d93f329bdd9381d3220.gif'
+            ,'/img/1517493790809.gif'
         ];
         return [
             'user_id' => User::inRandomOrder()->first()->id // 랜덤으로 id 가져온다

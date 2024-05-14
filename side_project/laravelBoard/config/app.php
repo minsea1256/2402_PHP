@@ -95,7 +95,7 @@ return [
     |
     */
 
-    'fallback_locale' => 'ko',
+    'fallback_locale' => 'en',
 
     /*
     |--------------------------------------------------------------------------
@@ -176,6 +176,12 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+
+        /** 
+         * 커스텀 프로바이더
+        */
+        App\Providers\MyViewProvider::class,
+    
 
     ],
 
