@@ -1,11 +1,10 @@
 <!-- <template> : 화면에 출력하는 구문 -->
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
+  <img alt="Vue logo" src="./assets/img/img (3).gif">
   <!-- 헤더 -->
   <!-- props : 자식 컴포넌트에게 props속성을 이용해서 데이터는 전달 -->
   <!-- <HeaderComponent :props="nav" /> -->
   <HeaderComponent :nav="nav" />
-  <ModalDetail :product="product" :products="products" :flgModal="flgModal"  />
   <!-- <div class="nav"> -->
     <!-- 나브의 컨텐츠를 데이터 바인딩하고, 리스트 렌더링 처리를 해주세요. -->
     <!-- <a v-for="item in nav" :key="item.navName" href="#">{{ item.navName }}</a> -->
@@ -16,13 +15,17 @@
   <!-- 상품 리스트 -->
   <div>
     <!-- <div v-for="item in products" :key="item.productName"> key에는 해당 vue가 인식할수 있는 코드를 작성 -->
-    <div v-for="(item, key) in products" :key="key">
+    <BoardList :products="products" @myOpenModal="myOpenModal">
+      <!-- slot : 자식쪽에서 <slot></slot> 부분에 전달하여 자시컴포넌트에서 랜더링 -->
+      <h3>부모쪽에서 정의한 슬롯</h3>
+    </BoardList>
+    <!-- <div v-for="(item, key) in products" :key="key"> -->
       <!-- @click="flgModal = !flgModal" 모달창 띄우기 -->
-      <h4 @click="myOpenModal(item)">{{ item.productName }}</h4>
-      <p>{{ item.price }}원</p>
+      <!-- <h4 @click="myOpenModal(item)">{{ item.productName }}</h4> -->
+      <!-- <p>{{ item.price }}원</p> -->
       <!-- @click="price++" : 인라인 안에 클릭 이벤트 넣어주면 적용이 된다 -->
       <!-- <button @click="products[0].price += 1000">가격 증가</button> -->
-    </div>
+    <!-- </div> -->
     <!-- <div>
       <h4 @click="myOpenModal(products[1])">{{ products[1].productName }}</h4>
       <p>{{ products[1].price }}원</p>
@@ -35,7 +38,7 @@
 
   <!-- 모달 -->
   <!-- v-if="false" / "true" 참/거짓 조건으로 모달로 만들수 있다 -->
-  
+  <ModalDetail :product="product" :flgModal="flgModal" @myCloseModal="myCloseModal" />
   <!-- <div class="bg_black" v-if="flgModal">
     <div class="bg_white">
       <img :src="{{ product.img }}"> 기존에 사용했던 문법을 js로 변경하고 싶을때 ':'콜론을 붙여준다 -->
@@ -53,9 +56,10 @@
 
 <!-- <script setup> : 화면 작동하는 구문 -->
 <script setup>
-import { ref, reactive } from 'vue';
+import { ref, reactive, provide } from 'vue';
 import HeaderComponent from './components/HeaderComponent.vue'; // 자식 컴포넌트 import
 import ModalDetail from './components/ModalDetail.vue'; // 자식 컴포넌트 import
+import BoardList from './components/BoardList.vue'; // 자식 컴포넌트 import
 
 // -------------------------------------------------------------------------
 // 데이터 바인딩 : 데이터 타입 적용시 문자열과 숫자열 잘 보고 넣어줘야 한다
@@ -91,9 +95,26 @@ const flgModal = ref(false); // 모달 표시용 플레그
 // const : 빈배열에 개채가 변화가 있어서 전달이 안돼서 let으로 선언한다
 let product = reactive({});
 function myOpenModal(item) {
-  flgModal.value = !flgModal.value;
+  flgModal.value = true; // 화면에 출력
   product = item;
 }
+function myCloseModal() {
+  flgModal.value = false; // 닫기
+  product = {};
+  // console.log(str); // 파라미터 연습용
+}
+// --------------------------
+// Provide / Inject 연습
+// --------------------------
+const count = ref(0);
+function addCount() {
+  count.value++;
+}
+
+provide('test', {
+  count
+  ,addCount
+});
 
 
 </script>
@@ -110,7 +131,7 @@ function myOpenModal(item) {
   color: #2c3e50;
   margin-top: 60px;
 }
-/* ㅊcss 파일 따로 분리 */
+/* css 파일 따로 분리 */
 /* .nav {
   background-color: #2c3e50;
   padding: 15px;
