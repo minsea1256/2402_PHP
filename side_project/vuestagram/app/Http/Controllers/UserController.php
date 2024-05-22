@@ -59,4 +59,26 @@ class UserController extends Controller
         ];
         return response()->json($responseDate, 200);
     }
+
+    /**
+     * 로그아웃
+     * 
+     * @param Illuminate\Http\Request $request
+     * 
+     * @return response() json
+     */
+
+    public function logout(Request $request) {
+        $id = MyToken::getValueInPayload($request->bearerToken(), 'idt');
+        $userInfo = User::find($id);
+
+        MyToken::removeRefreshToken($userInfo);
+        $responseDate = [
+            'code' => '0'
+            ,'msg' => ''
+            ,'date' => $userInfo
+        ];
+
+        return response()->json($responseDate, 200);
+    }
 }

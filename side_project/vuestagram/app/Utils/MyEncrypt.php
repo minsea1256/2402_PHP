@@ -21,7 +21,7 @@ class MyEncrypt {
      * @param string base64 URL encode
      * @return string $json
      */
-    public function base64UrDecode(string $base64) {
+    public function base64UrlDecode(string $base64) {
         return base64_decode(strtr($base64, '-_', '+/'));
     }
 
@@ -45,6 +45,17 @@ class MyEncrypt {
      */
     public function makeSalt($saltLength) {
         return Str::random($saltLength);
+    }
+
+    /**
+     * 특정 길이의 솔트를 제거한 문자열 반환'
+     * mb_substr : 멀티바이트로 한글 또는 아랍어 일때 사용한다
+     * @param string $signature 시그니쳐
+     * @param int $saltLength 솔트 길이
+     * @return string 솔트 제거한 문자열
+     */
+    public function subSalt(string $signature, int $saltLength) {
+        return mb_substr($signature, 0, (-1 * $saltLength));
     }
     
 }
