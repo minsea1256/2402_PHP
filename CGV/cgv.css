@@ -1,10 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 body {
+    height: 100vh;
     background-color: #1a2737;
+    font-family: "Noto Sans KR", sans-serif;
+    font-weight: 200;
+    font-style: normal;
 }
 ul,li {
     list-style-type: none;
@@ -15,15 +21,20 @@ a {
     text-decoration: none;
     color: #FFF;
 }
+
+/* header */
 .header {
     position: relative;
-    height: 1000px;
+    height: 1150px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 .img-play {
     position: absolute;
     width: 6rem;
     height: 6rem;
-    top: 50%;
+    top: 40%;
     right: 47%;
 }
 .header-top {
@@ -78,4 +89,174 @@ a {
     text-align: center;
     color: #FFF;
     line-height: 2rem;
+    margin: 1.5rem 4rem;
 }
+.btn p {
+    color: #FFF;
+}
+
+/* header 밑 */
+.header-bottom {
+    position: relative;
+    margin-left: 4rem;
+    top: -10rem;
+}
+.header-bottom-div > p {
+    position: absolute;
+    bottom: 0.2rem;
+    margin-left: 1rem;
+}
+.header-bottom-img{
+    position: absolute;
+    width: 250px;
+    height: 350px;
+    top: -2rem;
+}
+.swiper {
+    display: flex;
+    /* text-align: center; */
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 3rem;
+    margin-right: 2rem;
+}
+a > .swiper-icon{
+    width: 40px;
+    height: 40px;
+}
+.header-bottom-ranking {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 3rem;
+}
+.bottom-rank p {
+    position: absolute;
+    bottom: 0px;
+    margin-left: 1rem;
+}
+.ranking-img {
+    width: 230px;
+    height: 320px;
+}
+
+/* EVENT */
+.event {
+    margin-left: 4rem;
+    margin-right: 4rem;
+}
+.event-content > p {
+    color: #FFF;
+    display: inline-block;
+    font-size: 3rem;
+    font-weight: 900;
+    margin-right: 3rem;
+}
+.event-btn {
+    display: inline-block;
+    background-color: #ed3124;
+    width: 8rem;
+    height: 2rem;
+    border-radius: 1rem;
+    text-align: center;
+    color: #FFF;
+    line-height: 2rem;
+}
+.content-img {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 4rem;
+}
+.content-img p {
+    margin-top: 1rem;
+}
+
+/* special */
+.special-content {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 750px;
+    margin-top: 12rem;
+}
+.special-text {
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 40%;
+    height: 100%;
+    color: #FFF;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.special-text > span {
+    margin-left: 4rem;
+    font-weight: 900;
+    font-size: 3rem;
+}
+.content-text {
+    margin-left: 4rem;
+}
+.special-text-title {
+    font-weight: 500;
+    font-size: 1.5rem;
+}
+.content-text-bottom {
+    margin-left: 4rem;
+}
+.content-text-bottom > p {
+    margin-bottom: 1rem;
+}
+
+/* gifticon */
+.gifticon {
+    margin-top: 12rem;
+    color: #FFF;
+}
+
+.package-content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    gap: 3rem;
+    margin-right: 4rem;
+    margin-bottom: 4rem;
+}
+.package-content-left {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    gap: 3rem;
+    margin-left: 4rem;
+}
+.gifticon-admission {
+    margin-bottom: 4rem;
+}
+.gifticon-btn {
+    text-align: center;
+} 
+.gifticon-title {
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+
+.content {
+    display: flex;
+    width: 22rem;
+    height: 14rem;
+    border: #FFF solid 2px;
+    border-radius: 2rem;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+/*  */
