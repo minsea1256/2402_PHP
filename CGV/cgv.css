@@ -357,3 +357,50 @@ a > .swiper-icon{
 .notice_qr img {
     margin: 3.5rem;
 }
+
+.footer {
+    background-color: #FFF;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 4rem;
+    gap: 1rem;
+}
+
+.footer li {
+    color: #a5a5a5;
+    font-weight: 800;
+}
+.footer li:hover {
+    color: #000;
+}
+
+.footer p {
+    color: #a5a5a5;
+    font-weight: 300;
+    line-height: 1.5rem;
+}
+
+.footer_go {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 0.5rem;
+}
+#poketmon {
+    padding: 1rem 6rem 1rem 0.5rem;
+}
+
+.footer_go button {
+    display: inline-block;
+    background-color: #a5a5a5;
+    font-size: 1.2rem;
+    width: 3.2rem;
+    height: 3.2rem;
+    text-align: center;
+    line-height: 3rem;
+    font-weight: 600;
+    border: none;
+    color: #fff;
+}
