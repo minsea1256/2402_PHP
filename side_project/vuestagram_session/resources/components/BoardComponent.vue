@@ -19,7 +19,6 @@
         <img :src="item.img">
     </div>
   </div>
-  <button v-if="$store.state.moreBoardFlg" @click="$store.dispatch('getMoreBoardData')" class="btn btn-bg-black btn-more" type="button">더보기</button>
 
 </template>
 <script setup>
