@@ -27,12 +27,24 @@ hr {
 }
 
 /* header */
+.size-6 {
+    display: none;
+}
 .header {
-    position: relative;
-    height: 1150px;
+    /* position: \; */
+    /* height: 1150px;
     background-position: center;
     background-size: cover;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat; */
+    width: 100%;
+    height: 65rem;
+    position: relative;
+}
+.video-stream 
+.html5-main-video{
+    width: 100%;
+    height: 1040px;
+    top: 0px;
 }
 .img-play {
     position: absolute;
@@ -42,7 +54,12 @@ hr {
     right: 47%;
 }
 .header-top {
+    width: 100%;
     display: flex;
+    position: absolute;
+    top: 0px;
+    background-color: #000;
+    align-items: center;
 }
 .header-top img {
     width: 140px;
@@ -54,7 +71,7 @@ hr {
     font-size: 1.2rem;
 }
 .header-menu li {
-    padding: 20px;
+    padding: 30px;
 }
 .header-menu a:hover {
     color: red;
@@ -76,13 +93,21 @@ hr {
     margin: 10px 0;
 }
 .header-content {
-    margin-top: 25rem;
-    margin-left: 4rem;
+    left: 4rem;
+    top: 30rem;
+    position: absolute;
+    z-index: 99;
 }
 .header-content p,li {
     padding-right: 1.5rem;
 }
 .btn {
+    position: relative;
+    z-index: 99;
+    top: -12rem;
+}
+
+.btn p {
     display: inline-block;
     background-color: #ed3124;
     width: 8rem;
@@ -92,7 +117,6 @@ hr {
     line-height: 2rem;
     margin: 1.5rem 4rem;
     font-weight: 600;
-    
 }
 /* header 밑 */
 .header-bottom {
@@ -260,7 +284,7 @@ a > .swiper-icon{
 
 .notice {
     display: flex;
-    margin: auto 4rem;
+    margin: 12rem 4rem 0 4rem;
 }
 .notice_alert {
     display: flex;
@@ -359,6 +383,7 @@ a > .swiper-icon{
 }
 
 .footer {
+    margin-top: 12rem;
     background-color: #FFF;
     color: black;
     display: flex;
@@ -403,4 +428,32 @@ a > .swiper-icon{
     font-weight: 600;
     border: none;
     color: #fff;
+}
+
+@media screen and (min-width:1200px) {
+    /* 큰 데스크탑 */
+
+
+}
+@media screen and (min-width:992px) {
+    /* 데스크탑 */
+    .size-6 {
+        display: inline-block;
+        width: 7rem;
+    }
+@media screen and (min-width:768px) {
+    /* 타블렛 */
+    .size-6 {
+        display: inline-block;
+        width: 5rem;
+    }
+}
+
+@media screen and (min-width:576px) {
+    /* 스마트폰 가로 */
+    .size-6 {
+        display: inline-block;
+        width: 4rem;
+    }
+
 }
