@@ -120,10 +120,17 @@ hr {
 }
 /* header 밑 */
 .header-bottom {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     position: relative;
     margin-left: 4rem;
     top: -10rem;
 }
+/* .header-bottom {
+    position: relative;
+    margin-left: 4rem;
+    top: -10rem;
+} */
 .header-bottom-div > p {
     position: absolute;
     bottom: 0.2rem;
@@ -135,9 +142,9 @@ hr {
     height: 350px;
     top: -2rem;
 }
-.swiper {
+/* .header-swiper {
     display: flex;
-    /* text-align: center; */
+    text-align: center;
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: flex-end;
@@ -164,10 +171,134 @@ a > .swiper-icon{
 .ranking-img {
     width: 230px;
     height: 320px;
+} */
+
+/* 새로운 방법1 */
+
+/* .swiper2 {
+    width: 100%;
+    height: 100%;
+} */
+
+/* Custom styles for the header swiper */
+/* .header-swiper {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-shrink: 0;
 }
+
+.swiper-icon {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.header-bottom-ranking {
+    display: flex;
+    gap: 1rem;
+}
+
+.bottom-rank {
+    position: relative;
+    width: 230px;
+    height: 320px;
+}
+
+.bottom-rank img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.bottom-rank p {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    font-size: 1.5rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 0.5rem;
+} */
+
+/* 새로운 방법2 */
+
+/* Swiper 컨테이너 */
+.header-swiper {
+    position: relative;
+    width: 100%;
+    overflow: hidden; /* 슬라이드가 컨테이너를 넘지 않도록 설정 */
+}
+
+/* Swiper 슬라이더 */
+.swiper2 {
+    width: 100%;
+    height: auto; /* 슬라이더의 높이를 자동으로 조정 */
+}
+
+/* Swiper 래퍼 */
+.header-bottom-ranking {
+    display: flex; /* 슬라이드들을 수평으로 배치 */
+    align-items: stretch; /* 슬라이드 높이를 맞춤 */
+}
+
+/* 개별 슬라이드 */
+.second {
+    flex: 0 0 calc(25% - 30px); /* 슬라이드 너비를 비율로 설정하고 간격 고려 */
+    margin-right: 30px; /* 슬라이드 간의 간격 */
+    box-sizing: border-box; /* 슬라이드 크기 계산에 padding과 border 포함 */
+}
+
+/* 마지막 슬라이드 오른쪽 여백 제거 */
+.second:last-child {
+    margin-right: 0;
+}
+
+/* 슬라이드 안의 이미지 */
+.ranking-img {
+    width: 100%; /* 이미지가 슬라이드 너비에 맞도록 조정 */
+    height: auto; /* 이미지의 높이를 자동으로 조정 */
+}
+
+/* 슬라이드 안의 텍스트 */
+.bottom-rank p {
+    text-align: center; /* 텍스트 중앙 정렬 */
+    margin: 10px 0; /* 텍스트 위아래 여백 */
+}
+
+/* 네비게이션 버튼 */
+.swiper2-button-next, .swiper2-button-prev {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.swiper2-button-next {
+    right: 10px; /* 오른쪽 위치 */
+}
+
+.swiper2-button-prev {
+    left: 10px; /* 왼쪽 위치 */
+}
+
+/* 네비게이션 버튼의 아이콘 */
+.swiper-icon {
+    width: 100%;
+    height: auto;
+}
+
+
 
 /* EVENT */
 .event {
+    margin-bottom: 12rem;
+}
+.event-content {
     margin-left: 4rem;
     margin-right: 4rem;
 }
@@ -200,7 +331,7 @@ a > .swiper-icon{
 }
 
 /* special */
-.special-content {
+/* .special-content {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -232,7 +363,76 @@ a > .swiper-icon{
 }
 .content-text-bottom > p {
     margin-bottom: 1rem;
+} */
+
+ /* Swiper container */
+.swiper {
+    width: 100%;
+    height: 100%;
+    /* background: #000; */
 }
+
+/* Swiper slide style */
+.swiper-slide {
+    font-size: 18px;
+    color: #fff;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    /* padding: 40px 60px; */
+}
+
+/* Parallax background style */
+.parallax-bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 130%;
+    height: 100%;
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Custom style for the special section */
+.special-content {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100%;
+}
+
+.special-text {
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 40%;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.special-text>span {
+    margin-left: 4rem;
+    font-weight: 900;
+    font-size: 3rem;
+}
+
+.content-text {
+    margin-left: 4rem;
+}
+
+.special-text-title {
+    font-weight: 500;
+    font-size: 1.5rem;
+}
+
+.content-text-bottom {
+    margin-left: 4rem;
+}
+
+.content-text-bottom>p {
+    margin-bottom: 1rem;
+}
+
 
 /* gifticon */
 .gifticon {
@@ -397,9 +597,9 @@ a > .swiper-icon{
     color: #a5a5a5;
     font-weight: 800;
 }
-.footer li:hover {
+/* .footer li:hover {
     color: #000;
-}
+} */
 
 .footer p {
     color: #a5a5a5;
@@ -439,13 +639,16 @@ a > .swiper-icon{
     /* 데스크탑 */
     .size-6 {
         display: inline-block;
-        width: 7rem;
+        width: 3rem;
+        margin: 3rem;
     }
+}
 @media screen and (min-width:768px) {
     /* 타블렛 */
     .size-6 {
         display: inline-block;
-        width: 5rem;
+        width: 3rem;
+        margin: 3rem;
     }
 }
 
@@ -453,7 +656,8 @@ a > .swiper-icon{
     /* 스마트폰 가로 */
     .size-6 {
         display: inline-block;
-        width: 4rem;
+        width: 3rem;
+        margin: 3rem;
     }
 
 }

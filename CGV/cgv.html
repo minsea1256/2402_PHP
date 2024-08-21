@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CGV</title>
     <link rel="stylesheet" href="./cgv.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />  
+
 </head>
 <body>
     <!-- <div class="header" style="background-image: url(./img/main01.png);"> -->
@@ -82,7 +86,63 @@
                 <p>1</p>
             </div>
         </a>
-        <div class="swiper">
+    <!-- Swiper (Header Ranking) -->
+    <div class="header-swiper">
+        <div class="swiper2 mySwiper2">
+            <div class="swiper-wrapper header-bottom-ranking">
+                <div class="swiper-slide bottom-rank second">
+                    <img class="ranking-img" src="./img/post.webp" alt="post">
+                    <p>2</p>
+                </div>
+                <div class="swiper-slide bottom-rank second">
+                    <img class="ranking-img" src="./img/post.webp" alt="post">
+                    <p>3</p>
+                </div>
+                <div class="swiper-slide bottom-rank second">
+                    <img class="ranking-img" src="./img/post.webp" alt="post">
+                    <p>4</p>
+                </div>
+                <div class="swiper-slide bottom-rank second">
+                    <img class="ranking-img" src="./img/post.webp" alt="post">
+                    <p>5</p>
+                </div>
+                <div class="swiper-slide bottom-rank second">
+                    <img class="ranking-img" src="./img/post.webp" alt="post">
+                    <p>6</p>
+                </div>
+                <div class="swiper-slide bottom-rank second">
+                    <img class="ranking-img" src="./img/post.webp" alt="post">
+                    <p>7</p>
+                </div>
+                <div class="swiper-slide bottom-rank second">
+                    <img class="ranking-img" src="./img/post.webp" alt="post">
+                    <p>8</p>
+                </div>
+                <div class="swiper-slide bottom-rank second">
+                    <img class="ranking-img" src="./img/post.webp" alt="post">
+                    <p>9</p>
+                </div>
+                <div class="swiper-slide bottom-rank second">
+                    <img class="ranking-img" src="./img/post.webp" alt="post">
+                    <p>10</p>
+                </div>
+            </div>
+            <div class="swiper2-button-next">
+                <img class="swiper-icon" src="./img/icon-r.png" alt="right">
+            </div>
+            <div class="swiper2-button-prev">
+                <img class="swiper-icon" src="./img/icon-l.png" alt="left">
+            </div>
+            <!-- <div class="swiper-button-next2">
+                <img class="swiper-icon" src="./img/icon-r.png" alt="right">
+            </div>
+            <div class="swiper-button-prev2">
+                <img class="swiper-icon" src="./img/icon-l.png" alt="left">
+            </div> -->
+        </div>
+    </div>
+
+        <!-- <div class="header-swiper">
             <a href="">
                 <img class="swiper-icon" src="./img/icon-l.png" alt="left">
             </a>
@@ -115,7 +175,7 @@
             <a href="">
                 <img class="swiper-icon" src="./img/icon-r.png" alt="right">
             </a>
-        </div>
+        </div> -->
     </div>
     <div class="event">
         <div class="event-content">
@@ -148,7 +208,137 @@
             </div>
         </div>
     </div>
-    <div class="special">
+
+    <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper mySwiper">
+        <!-- Parallax background -->
+        <!-- <div class="parallax-bg" style="background-image: url(https://swiperjs.com/demos/images/nature-1.jpg);" data-swiper-parallax="-23%"></div> -->
+        
+        <!-- Swiper Wrapper -->
+        <div class="swiper-wrapper">
+        <!-- Slide 1 -->
+        <div class="swiper-slide">
+            <div class="special-content" style="background-image: url('./img/pecial.png');">
+                <div class="special-text">
+                <span>특별관</span>
+                <div class="content-text">
+                    <p class="special-text-title">
+                        SUITE CINEMA
+                        <br># 호텔 컨셉의 프리미엄관
+                    </p>
+                    <p class="special-text-content">
+                        <br>호텔 스위트룸을 극장 안에 옮긴 듯 독립된 공간과 세련된 인테리어로
+                        <br>쾌적한 영화 관람 환경을 선사합니다.
+                        <br>소중한 이들과 특별한 영화 여행을 떠나보세요 
+                    </p>
+                </div>
+                <div class="content-text-bottom">
+                    <p>01 / 04</p>
+                    <div class="event-btn">
+                    <p>전체보기</p>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="swiper-slide">
+            <div class="special-content" style="background-image: url('./img/pecial02.jpg');">
+                <div class="special-text">
+                <span>특별관</span>
+                <div class="content-text">
+                    <p class="special-text-title">
+                        CINE & LIVING ROOM
+                        <br># 신개념 소셜 상영관
+                    </p>
+                    <p class="special-text-content">
+                        <br>내 집 같이 편안하고 세련된 거실의 무드와 
+                        <br>감성을 담은 신개념 소셜 상영관입니다.
+                        <br>거실에 대한 로망을 담은 다양한 테마로 구성된 공간에서 
+                        <br>편안하고 특별한 매력을 즐겨보세요.
+                    </p>
+                </div>
+                <div class="content-text-bottom">
+                    <p>02 / 04</p>
+                    <div class="event-btn">
+                    <p>전체보기</p>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="swiper-slide">
+            <div class="special-content" style="background-image: url('./img/pecial03.jpg');">
+                <div class="special-text">
+                <span>특별관</span>
+                <div class="content-text">
+                    <p class="special-text-title">
+                    4DX
+                    <br># 모션시트 #오감체험
+                    </p>
+                    <p class="special-text-content">
+                        <br>4DX 상영관은 영화의 장면에 맞추어 움직이는 
+                        <br>모션시트와 더불어 바람, 빛, 안개, 향기, 진동 등의 다양한 
+                        <br>환경 효과를 느낄 수 있는 오감 체험 특별 상영관입니다.
+                        <br>단순한 영화 관람을 넘어 
+                        <br>영화 속 주인공이 된 듯한 체험을 할 수 있으며,
+                        <br>장면마다 생생함을 극대화시키는 4DX 효과를 통해 
+                        <br>영화에 더욱 몰입할 수 있습니다.
+                    </p>
+                </div>
+                <div class="content-text-bottom">
+                    <p>03 / 04</p>
+                    <div class="event-btn">
+                    <p>전체보기</p>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Slide 4 -->
+        <div class="swiper-slide">
+        <div class="special-content" style="background-image: url('./img/pecial04.jpg');">
+            <div class="special-text">
+            <span>특별관</span>
+            <div class="content-text">
+                <p class="special-text-title">
+                    CINE de CHEF
+                    <br># 쉐프가 있는 영화관
+                </p>
+                <p class="special-text-content">
+                    <br>미국의 신문왕 윌리엄 랜돌프 허스트는 
+                    <br>가장 소중한 손님을 모실 때, 그의 개인 전용 영화관에서 
+                    <br>최고의 쉐프들이 준비하는 만찬과 함께 영화의 즐거움을 나누었다고 합니다.
+                    <br>이제 씨네드쉐프가 50년 전 그 곳에 
+                    <br>명사들이 경험했던 특별한 초대의 시간에 진정한 품격을 더합니다.
+                    <br>꿈이 현실로 이루어지는 씨네드쉐프에서 소중한 분들과 
+                    <br>함께 최고의 가치를 경험하십시오.
+                </p>
+            </div>
+            <div class="content-text-bottom">
+                <p>04 / 04</p>
+                <div class="event-btn">
+                <p>전체보기</p>
+                </div>
+            </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    
+    <!-- Swiper navigation buttons -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    
+    <!-- Swiper pagination -->
+    <div class="swiper-pagination"></div>
+    </div>
+
+
+    <!-- <div class="special">
         <div class="special-content" style="background-image: url('./img/pecial.png');">
             <div class="special-text">
                 <span>특별관</span>
@@ -173,7 +363,7 @@
             </div>
             
         </div>
-    </div>
+    </div> -->
     <div class="gifticon">
         <div class="gifticon-content">
             <div class="package-content">
@@ -353,5 +543,146 @@
             <button>GO</button>
         </form>
     </div>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- Initialize Swiper -->
+    <script>
+        // var swiper = new Swiper(".mySwiper", {
+        //     speed: 600,
+        //     parallax: true,
+        //     pagination: {
+        //     el: ".swiper-pagination",
+        //     clickable: true,
+        //     },
+        //     navigation: {
+        //     nextEl: ".swiper-button-next",
+        //     prevEl: ".swiper-button-prev",
+        //     },
+        // });
+
+        // var swiper2 = new Swiper(".mySwiper2", {
+        //     slidesPerView: 4, // 화면에 보일 슬라이드 개수
+        //     spaceBetween: 30, // 슬라이드 간 간격
+        //     loop: true, // 무한 루프 활성화
+        //     loopAdditionalSlides: 4, // 루프에 추가할 슬라이드 수 (slidesPerView와 같게 설정)
+        //     navigation: {
+        //         nextEl: ".swiper-button-next2",
+        //         prevEl: ".swiper-button-prev2",
+        //     },
+        //     centeredSlides: false, // 슬라이드를 중앙 정렬하지 않음
+        //     slideToClickedSlide: true, // 클릭한 슬라이드로 이동
+        //     speed: 600, // 슬라이드 전환 속도
+        // });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            var swiper = new Swiper(".mySwiper", {
+                speed: 600,
+                parallax: true,
+                pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+                },
+                navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+                },
+            });
+            
+            var swiper2 = new Swiper('.mySwiper2', {
+                slidesPerView: 4, // 한 화면에 표시할 슬라이드 개수
+                spaceBetween: 30, // 슬라이드 간 간격
+                loop: true, // loop를 활성화
+                centeredSlides: false, // 슬라이드를 가운데로 정렬하지 않음
+                autoplay: {
+                    delay: 2500,
+                    disableOnInteraction: false,
+                },
+                navigation: {
+                    nextEl: '.swiper2-button-next',
+                    prevEl: '.swiper2-button-prev',
+                },
+                loopFillGroupWithBlank: true, // 그룹을 채우기 위해 빈 슬라이드를 추가
+                breakpoints: {
+                    1024: {
+                        slidesPerView: 4, // 브라우저 크기가 1024px 이상일 때 4개 슬라이드 표시
+                        spaceBetween: 30,
+                    },
+                    768: {
+                        slidesPerView: 3, // 브라우저 크기가 768px 이상일 때 3개 슬라이드 표시
+                        spaceBetween: 20,
+                    },
+                    640: {
+                        slidesPerView: 2, // 브라우저 크기가 640px 이상일 때 2개 슬라이드 표시
+                        spaceBetween: 10,
+                    },
+                    320: {
+                        slidesPerView: 1, // 브라우저 크기가 320px 이상일 때 1개 슬라이드 표시
+                        spaceBetween: 5,
+                    }
+                }
+            });
+        });
+
+        // var swiper2 = new Swiper(".mySwiper2", {
+        //     slidesPerView: 4, // 한 화면에 표시할 슬라이드 개수
+        //     spaceBetween: 30, // 슬라이드 간 간격
+        //     loop: true, // loop를 끕니다. 필요에 따라 true로 설정
+        //     centeredSlides: false,
+        //     autoplay: {
+        //         delay: 2500,
+        //         disableOnInteraction: false,
+        //     },
+        //     navigation: {
+        //         nextEl: ".swiper-button-next2",
+        //         prevEl: ".swiper-button-prev2",
+        //     },
+        //     centeredSlides: false, // 슬라이드를 가운데로 정렬하지 않음
+        //     loopFillGroupWithBlank: true, // 그룹을 채우기 위해 빈 슬라이드를 추가
+        //     breakpoints: {
+        //         1024: {
+        //         slidesPerView: 4, // 브라우저 크기가 1024px 이상일 때 4개 슬라이드 표시
+        //         spaceBetween: 30
+        //         },
+        //         768: {
+        //         slidesPerView: 3, // 브라우저 크기가 768px 이상일 때 3개 슬라이드 표시
+        //         spaceBetween: 20
+        //         },
+        //         640: {
+        //         slidesPerView: 2, // 브라우저 크기가 640px 이상일 때 2개 슬라이드 표시
+        //         spaceBetween: 10
+        //         },
+        //         320: {
+        //         slidesPerView: 1, // 브라우저 크기가 320px 이상일 때 1개 슬라이드 표시
+        //         spaceBetween: 5
+        //         }
+        //     }
+        // });
+
+        // var swiper2 = new Swiper(".mySwiper2", {
+        //     loop: true,
+        //     spaceBetween: 30,
+        //     slidesPerView: 4,
+        //     slideToClickedSlide: true,
+        //     centeredSlides: false,
+        //     autoplay: {
+        //         delay: 2500,
+        //         disableOnInteraction: false,
+        //     },
+        //     navigation: {
+        //         nextEl: '.swiper-button-next2',
+        //         prevEl: '.swiper-button-prev2',
+        //     },
+        //     on: {
+        //         activeIndexChange : function() {
+        //         if (this.realIndex == 0) {
+        //             this.allowSlidePrev = false;
+        //         } else {
+        //             this.allowSlidePrev = true;
+        //         }
+        //         },
+        //     },
+        // });
+    </script>
 </body>
 </html>
