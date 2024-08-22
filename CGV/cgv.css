@@ -121,7 +121,7 @@ hr {
 /* header 밑 */
 .header-bottom {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-template-columns: 1fr 2fr;
     position: relative;
     margin-left: 4rem;
     top: -10rem;
@@ -133,15 +133,16 @@ hr {
 } */
 .header-bottom-div > p {
     position: absolute;
-    bottom: 0.2rem;
+    left: -1rem;
+    top: -2rem;
     margin-left: 1rem;
 }
 .header-bottom-img{
     position: absolute;
-    width: 250px;
-    height: 350px;
+    width: 18%;
     top: -2rem;
 }
+
 /* .header-swiper {
     display: flex;
     text-align: center;
@@ -226,7 +227,7 @@ a > .swiper-icon{
 
 /* Swiper 컨테이너 */
 .header-swiper {
-    position: relative;
+    /* position: relative; */
     width: 100%;
     overflow: hidden; /* 슬라이드가 컨테이너를 넘지 않도록 설정 */
 }
@@ -262,9 +263,15 @@ a > .swiper-icon{
 }
 
 /* 슬라이드 안의 텍스트 */
-.bottom-rank p {
-    text-align: center; /* 텍스트 중앙 정렬 */
-    margin: 10px 0; /* 텍스트 위아래 여백 */
+.header-bottom-num,
+.header-swiper-num {
+    /* text-align: center; 텍스트 중앙 정렬 */
+    /* margin: 10px 0; 텍스트 위아래 여백 */
+    position: absolute;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 0.5rem 0.7rem;
+    font-size: 0.8rem;
 }
 
 /* 네비게이션 버튼 */
@@ -283,7 +290,7 @@ a > .swiper-icon{
 }
 
 .swiper2-button-prev {
-    left: 10px; /* 왼쪽 위치 */
+    left: 30%; /* 왼쪽 위치 */
 }
 
 /* 네비게이션 버튼의 아이콘 */
@@ -630,12 +637,12 @@ a > .swiper-icon{
     color: #fff;
 }
 
-@media screen and (min-width:1200px) {
+@media screen and (max-width:1200px) {
     /* 큰 데스크탑 */
 
 
 }
-@media screen and (min-width:992px) {
+@media screen and (max-width:992px) {
     /* 데스크탑 */
     .size-6 {
         display: inline-block;
@@ -643,7 +650,7 @@ a > .swiper-icon{
         margin: 3rem;
     }
 }
-@media screen and (min-width:768px) {
+@media screen and (max-width:768px) {
     /* 타블렛 */
     .size-6 {
         display: inline-block;
@@ -652,7 +659,7 @@ a > .swiper-icon{
     }
 }
 
-@media screen and (min-width:576px) {
+@media screen and (max-width:576px) {
     /* 스마트폰 가로 */
     .size-6 {
         display: inline-block;
